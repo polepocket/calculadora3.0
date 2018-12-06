@@ -118,8 +118,6 @@
                     draggable: true,
                     icon: 'img/marker-green.png'
                 }
-                this.addMarker();
-                this.showIndication = true;
                 this.components = place.address_components;
                 // this.components.map(function(value, key) {
                 //     if(value.types[0] == "postal_code"){
@@ -149,6 +147,8 @@
                     }else{
                         this.cp_perfila = false
                     }
+                    this.addMarker();
+                    this.showIndication = true;
                 }
                 else{
                     this.$swal({
@@ -163,49 +163,6 @@
                     }) 
                 }    
             },
-            /*
-            setPlace(place) {
-                
-                var code_postal="";
-                var numero = "";
-                this.components.map(function(value, key) {
-                    if(value.types[0] == "postal_code"){
-                        code_postal = value.short_name
-                    }           
-                });
-                this.components.map(function(value, key) {
-                    if(value.types[0] == "street_number"){
-                        numero = value.short_name
-                    }        
-                });
-                if(numero != "" && code_postal != ''){
-                    this.activo = true;
-                    if(code_postal != ''){
-                        axios.get('/codigos/'+code_postal).then((response => {
-                            this.cp = code_postal
-                            this.cp_perfila = response.data.atendido
-                        }))     
-                    }else{
-                        this.cp_perfila = false
-                    }
-                }
-                else{
-                    this.$swal({
-                        title: 'Dirección incompleta',
-                        text: "Asegúrate de incluir el número de la casa",
-                        type: 'error',
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'Aceptar'
-                    }).then((result) => {
-                        this.activo = false;
-                    }) 
-                }
-                 
-                this.direction = this.currentPlace.formatted_address
-                this.lat = this.currentPlace.geometry.location.lat()
-                this.lng = this.currentPlace.geometry.location.lng()   
-            },*/
             addMarker() {
                 this.optionsMarker = {
                     clickable: false,

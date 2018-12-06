@@ -18,7 +18,7 @@
                         <span>{{this.name_file}}</span>
                         <input type="file" ref="myFile" class="hidden" v-validate="'ext:jpeg,jpg,png,pdf'" data-vv-as="image" name="file" @change="previewFiles" v-on:change="onImageChange">
                     </label>    
-                    <h6>{{ errors.first('file') }}</h6>
+                    <h6 class="text-white">{{ errors.first('file') }}</h6>
                 </div>         
             </div>
             <div class="col-1"></div>
@@ -100,28 +100,23 @@
                 reader.readAsDataURL(file);
             },
             uploadImage(){
-                if(this.error.items.length == 0){
-                    let formData = new FormData();
-                    formData.append('file', this.file);
-                    formData.append('name_file', this.file.name);
-                    formData.append('lead_id', this.lead_id);
-                    let config = { headers: { 'Content-Type': 'multipart/form-data' } }
-                    axios.post('/recibo', formData, config).then(response => {
-                        if(response.data.response.result.message)
-                        {
-                            this.$emit('reciboLead');
-                        }
-                        else{
-                            this.$swal("¡Lo sentimos!", "Ocurrió un error al guardar tu recibo, por favor vuelve a intentarlo", "error");   
-                            this.file = '';
-                            this.name_file = ''
-                            this.recibo = false  
-                        }
-                    }); 
-                }
-                else{
-                    this.$swal('Error', 'Selecciona un archivo de imagen o PDF.','error') 
-                }
+                let formData = new FormData();
+                formData.append('file', this.file);
+                formData.append('name_file', this.file.name);
+                formData.append('lead_id', this.lead_id);
+                let config = { headers: { 'Content-Type': 'multipart/form-data' } }
+                axios.post('/recibo', formData, config).then(response => {
+                    if(response.data.response.result.message)
+                    {
+                        this.$emit('reciboLead');
+                    }
+                    else{
+                        this.$swal("¡Lo sentimos!", "Ocurrió un error al guardar tu recibo, por favor vuelve a intentarlo", "error");   
+                        this.file = '';
+                        this.name_file = ''
+                        this.recibo = false  
+                    }
+                }); 
             },
             previewFiles() {
                 this.file = this.$refs.myFile.files['0'].name
