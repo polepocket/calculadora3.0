@@ -63,7 +63,7 @@
             <div style="text-align: center">
                 <h3 class="m-title text-blue-enlight pt-4">¿Para qué necesitamos tu dirección?</h3>
                 <div class="p-3">
-                    <img src="img/direccion.png">                    
+                    <img v-bind:src="img/direccion.png">                    
                     <p class="big pt-3" style="text-align:justify">La ubicación de tu inmueble nos permitirá validar que Enlight tenga cobertura en tu zona y calcular la cantidad de luz solar que recibe tu techo para definir el número de paneles solares que necesitas.</p>
                 </div>
             </div>              
