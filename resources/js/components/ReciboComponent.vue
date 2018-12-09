@@ -11,7 +11,7 @@
             </div>
             
             <div class="col-md-10">
-                <img src="img/file.png" alt="">
+                <img src="asset('img/file.png')" alt="">
                 <div class="offset-md-3 col-md-6">
                     <p class="text-white big-2">¡Envíanos tu recibo de luz para poder adecuar nuestra propuesta a tu forma de consumir energía!</p>
                     <label class="btn btn-file block">

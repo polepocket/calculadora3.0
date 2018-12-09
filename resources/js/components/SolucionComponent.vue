@@ -29,7 +29,7 @@
         </div>  
         <div class="content-calcu">
             <div class="div-sol">
-                <img src="img/logo_header.png" width="60" class="pt-3 show_movil">
+                <img src="asset('img/logo_header.png')" width="60" class="pt-3 show_movil">
                 <h2 class="col-blue-enlight bold p-3 pt-4 ahorro">¡Ahorrarás {{ this.ahorro_bimestral | currency('$', 0) }} <br class="show_movil"> cada bimestre!</h2>  
                 <hr class="show_movil">
                 <div class="row">

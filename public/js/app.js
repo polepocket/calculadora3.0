@@ -81805,7 +81805,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "p-3" }, [
-              _c("img", { attrs: { src: "/img/direccion.png" } }),
+              _c("img", { attrs: { src: "asset('img/direccion.png')" } }),
               _vm._v(" "),
               _c(
                 "p",
@@ -82877,7 +82877,7 @@ var render = function() {
         _c("div", { staticClass: "div-sol" }, [
           _c("img", {
             staticClass: "pt-3 show_movil",
-            attrs: { src: "img/logo_header.png", width: "60" }
+            attrs: { src: "asset('img/logo_header.png')", width: "60" }
           }),
           _vm._v(" "),
           _c("h2", { staticClass: "col-blue-enlight bold p-3 pt-4 ahorro" }, [
@@ -83758,7 +83758,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-10" }, [
-          _c("img", { attrs: { src: "img/file.png", alt: "" } }),
+          _c("img", { attrs: { src: "asset('img/file.png')", alt: "" } }),
           _vm._v(" "),
           _c("div", { staticClass: "offset-md-3 col-md-6" }, [
             _c("p", { staticClass: "text-white big-2" }, [
@@ -84240,19 +84240,21 @@ var staticRenderFns = [
         _c("div", { staticClass: "offset-sm-3 col-sm-6 row" }, [
           _c("div", { staticClass: "col-4" }, [
             _c("a", { attrs: { href: "" } }, [
-              _c("img", { attrs: { src: "img/insta1.png", alt: "" } })
+              _c("img", { attrs: { src: "asset('img/insta1.png')", alt: "" } })
             ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-4" }, [
             _c("a", { attrs: { href: "" } }, [
-              _c("img", { attrs: { src: "img/twitter1.png", alt: "" } })
+              _c("img", {
+                attrs: { src: "asset('img/twitter1.png')", alt: "" }
+              })
             ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-4" }, [
             _c("a", { attrs: { href: "" } }, [
-              _c("img", { attrs: { src: "img/fb1.png", alt: "" } })
+              _c("img", { attrs: { src: "asset('img/fb1.png')", alt: "" } })
             ])
           ])
         ])
