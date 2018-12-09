@@ -10480,16 +10480,16 @@ a.text-dark:focus {
   font-family: 'Gibson';
   font-style: regular;
   /* font-weight: 400; */
-  src: assets("/fonts/Gibson-Regular.eot");
-  src: local("Gibson-Regular"), local("Gibson-Regular"), assets("/fonts/Gibson-Regular.eot?#iefix") format("embedded-opentype"), assets("/fonts/Gibson-Regular.woff") format("woff"), assets("/fonts/Gibson-Regular.ttf") format("truetype"), assets("/fonts/Gibson-Regular.svg#Gibson") format("svg");
+  src: assets("fonts/Gibson-Regular.eot");
+  src: local("Gibson-Regular"), local("Gibson-Regular"), assets("fonts/Gibson-Regular.eot?#iefix") format("embedded-opentype"), assets("fonts/Gibson-Regular.woff") format("woff"), assets("fonts/Gibson-Regular.ttf") format("truetype"), assets("fonts/Gibson-Regular.svg#Gibson") format("svg");
 }
 
 @font-face {
   font-family: 'Gibson Light';
   font-style: light;
   /* font-weight: 400; */
-  src: assets("/fonts/Gibson-Light.eot");
-  src: local("Gibson-Light"), local("Gibson-Light"), assets("/fonts/Gibson-Light.eot?#iefix") format("embedded-opentype"), assets("/fonts/Gibson-Light.woff") format("woff"), assets("/fonts/Gibson-Light.ttf") format("truetype"), assets("/fonts/Gibson-Light.svg#Gibson") format("svg");
+  src: assets("fonts/Gibson-Light.eot");
+  src: local("Gibson-Light"), local("Gibson-Light"), assets("fonts/Gibson-Light.eot?#iefix") format("embedded-opentype"), assets("fonts/Gibson-Light.woff") format("woff"), assets("fonts/Gibson-Light.ttf") format("truetype"), assets("fonts/Gibson-Light.svg#Gibson") format("svg");
 }
 
 html,
