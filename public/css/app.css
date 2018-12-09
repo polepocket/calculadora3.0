@@ -11194,7 +11194,7 @@ h3.w-100 {
 .title,
 .title-sol {
   width: 100vw;
-  background-image: url("/img/fondo_calculadora.png");
+  background-image: url("../img/fondo_calculadora.png");
   background-position: center;
   background-size: cover;
   display: -webkit-box;
@@ -11210,7 +11210,7 @@ b {
 }
 
 .bg-calcula {
-  background-image: url("/img/fondo_calculadora.png");
+  background-image: url("../img/fondo_calculadora.png");
 }
 
 .bg-grad {

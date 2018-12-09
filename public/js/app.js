@@ -78195,7 +78195,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.lead.promo = personal.promo;
             this.lead.contacto_refiere = personal.contacto_refiere;
             this.lead.promo_convenio = personal.promo_convenio;
-            axios.post('/leads', this.lead).then(function (response) {
+            axios.post('../leads', this.lead).then(function (response) {
                 if (_this.lead.consumption < 2500 || _this.lead.cp_perfila == "false") {
                     _this.fin = true;
                     _this.message.title = 'Gracias';
@@ -78207,7 +78207,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         editLead: function editLead(lead) {
             this.lead.consumption = lead.consumption;
-            axios.put('/leads/' + this.lead_id, this.lead).then(function (response) {
+            axios.put('../leads/' + this.lead_id, this.lead).then(function (response) {
                 // console.log('Editado');
             });
         },
@@ -78226,21 +78226,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.lead.lat = lead.lat;
             this.lead.lng = lead.lng;
             this.lead.cp_perfila = lead.cp_perfila;
-            axios.put('/leads/' + this.lead_id, this.lead).then(function (response) {
+            axios.put('../leads/' + this.lead_id, this.lead).then(function (response) {
                 _this2.mapa = true;
             });
         },
-        sendNotes: function sendNotes(lead) {
-            var _this3 = this;
 
-            var notas = {
-                consumption: lead.consumption,
-                consumption_tmp: lead.consumption_tmp
-            };
-            axios.put('/sendNotes/' + this.lead_id, this.notas).then(function (response) {
-                _this3.mapa = true;
-            });
-        },
+        // sendNotes(lead) {
+        //     let notas = {
+        //         consumption : lead.consumption,
+        //         consumption_tmp : lead.consumption_tmp
+        //     }
+        //     axios.put('/sendNotes/'+this.lead_id, this.notas).then(
+        //         (response) =>
+        //         {
+        //             this.mapa = true;
+        //         }
+        //     );
+        // },
         reciboLead: function reciboLead(lead) {
             this.fin = true;
             this.message.title = 'Gracias';
