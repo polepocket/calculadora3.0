@@ -10480,16 +10480,16 @@ a.text-dark:focus {
   font-family: 'Gibson';
   font-style: regular;
   /* font-weight: 400; */
-  src: url("/fonts/Gibson-Regular.eot");
-  src: local("Gibson-Regular"), local("Gibson-Regular"), url("/fonts/Gibson-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Gibson-Regular.woff") format("woff"), url("/fonts/Gibson-Regular.ttf") format("truetype"), url("/fonts/Gibson-Regular.svg#Gibson") format("svg");
+  src: assets("/fonts/Gibson-Regular.eot");
+  src: local("Gibson-Regular"), local("Gibson-Regular"), assets("/fonts/Gibson-Regular.eot?#iefix") format("embedded-opentype"), assets("/fonts/Gibson-Regular.woff") format("woff"), assets("/fonts/Gibson-Regular.ttf") format("truetype"), assets("/fonts/Gibson-Regular.svg#Gibson") format("svg");
 }
 
 @font-face {
   font-family: 'Gibson Light';
   font-style: light;
   /* font-weight: 400; */
-  src: url("/fonts/Gibson-Light.eot");
-  src: local("Gibson-Light"), local("Gibson-Light"), url("/fonts/Gibson-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/Gibson-Light.woff") format("woff"), url("/fonts/Gibson-Light.ttf") format("truetype"), url("/fonts/Gibson-Light.svg#Gibson") format("svg");
+  src: assets("/fonts/Gibson-Light.eot");
+  src: local("Gibson-Light"), local("Gibson-Light"), assets("/fonts/Gibson-Light.eot?#iefix") format("embedded-opentype"), assets("/fonts/Gibson-Light.woff") format("woff"), assets("/fonts/Gibson-Light.ttf") format("truetype"), assets("/fonts/Gibson-Light.svg#Gibson") format("svg");
 }
 
 html,
@@ -11194,7 +11194,7 @@ h3.w-100 {
 .title,
 .title-sol {
   width: 100vw;
-  background-image: url("/img/fondo_calculadora.png");
+  background-image: assets("/img/fondo_calculadora.png");
   background-position: center;
   background-size: cover;
   display: -webkit-box;
@@ -11210,7 +11210,7 @@ b {
 }
 
 .bg-calcula {
-  background-image: url("/img/fondo_calculadora.png");
+  background-image: assets("/img/fondo_calculadora.png");
 }
 
 .bg-grad {
