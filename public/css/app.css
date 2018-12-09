@@ -10480,7 +10480,7 @@ a.text-dark:focus {
   font-family: 'Gibson';
   font-style: regular;
   /* font-weight: 400; */
-  src: url("/fonts/Gibson-Regular.eot");
+  src: url("../fonts/Gibson-Regular.eot");
   src: local("Gibson-Regular"), local("Gibson-Regular"), url("/fonts/Gibson-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Gibson-Regular.woff") format("woff"), url("/fonts/Gibson-Regular.ttf") format("truetype"), url("/fonts/Gibson-Regular.svg#Gibson") format("svg");
 }
 
@@ -10488,7 +10488,7 @@ a.text-dark:focus {
   font-family: 'Gibson Light';
   font-style: light;
   /* font-weight: 400; */
-  src: url("/fonts/Gibson-Light.eot");
+  src: url("../fonts/Gibson-Light.eot");
   src: local("Gibson-Light"), local("Gibson-Light"), url("/fonts/Gibson-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/Gibson-Light.woff") format("woff"), url("/fonts/Gibson-Light.ttf") format("truetype"), url("/fonts/Gibson-Light.svg#Gibson") format("svg");
 }
 
