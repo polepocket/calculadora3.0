@@ -29,7 +29,7 @@
         </div>  
         <div class="content-calcu">
             <div class="div-sol">
-                <img src="asset('img/logo_header.png')" width="60" class="pt-3 show_movil">
+                <img src="img/logo_header.png" width="60" class="pt-3 show_movil">
                 <h2 class="col-blue-enlight bold p-3 pt-4 ahorro">¡Ahorrarás {{ this.ahorro_bimestral | currency('$', 0) }} <br class="show_movil"> cada bimestre!</h2>  
                 <hr class="show_movil">
                 <div class="row">
@@ -175,7 +175,7 @@
                 this.data.consumption = this.consumption
                 this.data.lead_id = this.lead_id
                 this.data.mty = this.mty
-                axios.post('solution', this.data).then(
+                axios.post('calculadora3.0/solution', this.data).then(
                     (response) =>
                     {
                         this.potencia = response.data.potencia_sistema
@@ -214,7 +214,7 @@
                     this.data.consumption = this.consumption
                     this.data.lead_id = this.lead_id
                     this.data.mty = this.mty
-                    axios.post('solution', this.data).then(
+                    axios.post('calculadora3.0/solution', this.data).then(
                         (response) =>
                         {
                             this.$modal.hide('modal-edita-express');
