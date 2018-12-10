@@ -5,7 +5,7 @@
                 <button class="btn-back" v-on:click="backMap()">
                     <v-icon name="arrow-left" scale="1"/>
                 </button> 
-                <div class="div-back">
+                <div class="div-up">
                     <!-- <span class="text-white">Volver</span> -->
                 </div>   
             </div>

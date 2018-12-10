@@ -40,13 +40,13 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                             <li class="nav-item">
-                                <a class="nav-link" href="">Para tu casa</a>
+                                <a class="nav-link" href="https://www.enlight.mx/">Para tu casa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Para tu negocio</a>
+                                <a class="nav-link" href="https://www.enlight.mx/negocio/">Para tu negocio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Nosotros</a>
+                                <a class="nav-link" href="https://www.enlight.mx/empresa">Nosotros</a>
                             </li>
                         @guest
                             <!-- <li class="nav-item">
