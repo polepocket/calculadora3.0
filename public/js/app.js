@@ -82761,7 +82761,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default.a);
             this.data.consumption = this.consumption;
             this.data.lead_id = this.lead_id;
             this.data.mty = this.mty;
-            axios.post('/solution', this.data).then(function (response) {
+            axios.post('solution', this.data).then(function (response) {
                 _this2.$modal.hide('modal-edita-express');
                 _this2.potencia = response.data.potencia_sistema;
                 _this2.consumo_cubierto = response.data.consumo_cubierto;
