@@ -105,7 +105,7 @@
                 formData.append('name_file', this.file.name);
                 formData.append('lead_id', this.lead_id);
                 let config = { headers: { 'Content-Type': 'multipart/form-data' } }
-                axios.post('calculadora3.0/recibo', formData, config).then(response => {
+                axios.post('/recibo', formData, config).then(response => {
                     if(response.data.response.result.message)
                     {
                         this.$emit('reciboLead');
