@@ -83673,13 +83673,16 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
         VeeValidate: __WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]
     },
     methods: {
-        onImageChange: function onImageChange(e) {
-            var files = e.target.files || e.dataTransfer.files;
-            if (!files.length) return;
-            this.createImage(files[0]);
-            this.file = this.$refs.myFile.files['0'];
-            this.name_file = this.$refs.myFile.files['0'].name;
-        },
+        // onImageChange(e) {
+        //         let files = e.target.files || e.dataTransfer.files;
+        //         if (!files.length)
+        //             return;
+        //         this.createImage(files[0]);
+        //         this.file = this.$refs.myFile.files['0'];
+        //         this.name_file = this.$refs.myFile.files['0'].name
+
+
+        // },
         createImage: function createImage(file) {
             var reader = new FileReader();
             var vm = this;
@@ -83796,7 +83799,7 @@ var render = function() {
                 ref: "myFile",
                 staticClass: "hidden",
                 attrs: { type: "file", "data-vv-as": "image", name: "file" },
-                on: { change: [_vm.previewFiles, _vm.onImageChange] }
+                on: { change: _vm.previewFiles }
               })
             ])
           ])

@@ -17,7 +17,7 @@
                     <label class="btn btn-file block">
                         <span>{{this.name_file}}</span>
                         <span class="text-danger">{{ error }}</span>
-                        <input type="file" ref="myFile" class="hidden" v-validate="'ext:jpeg,jpg,png,pdf'" data-vv-as="image" name="file" @change="previewFiles" v-on:change="onImageChange">
+                        <input type="file" ref="myFile" class="hidden" v-validate="'ext:jpeg,jpg,png,pdf'" data-vv-as="image" name="file" @change="previewFiles">
                     </label>    
                 </div>         
             </div>
@@ -81,17 +81,17 @@
             VeeValidate
         },
         methods: {
-            onImageChange(e) {
-                    let files = e.target.files || e.dataTransfer.files;
-                    if (!files.length)
-                        return;
-                    this.createImage(files[0]);
-                    this.file = this.$refs.myFile.files['0'];
-                    this.name_file = this.$refs.myFile.files['0'].name
+            // onImageChange(e) {
+            //         let files = e.target.files || e.dataTransfer.files;
+            //         if (!files.length)
+            //             return;
+            //         this.createImage(files[0]);
+            //         this.file = this.$refs.myFile.files['0'];
+            //         this.name_file = this.$refs.myFile.files['0'].name
                     
                     
                               
-            },
+            // },
             createImage(file) {
                 let reader = new FileReader();
                 let vm = this;
