@@ -78278,48 +78278,14 @@ var render = function() {
     "div",
     { staticClass: "content" },
     [
-      !_vm.dimension
-        ? _c("dimension-component", {
-            attrs: { lead: _vm.lead },
-            on: { newLead: _vm.newLead }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.dimension && !_vm.personal
-        ? _c("personales-component", {
-            on: { personalLead: _vm.personalLead, back1: _vm.back1 }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.dimension && _vm.personal && !_vm.solucion && !_vm.fin
-        ? _c("solucion-component", {
-            attrs: { mty: _vm.mty, lead: _vm.lead, lead_id: _vm.lead_id },
-            on: {
-              editLead: _vm.editLead,
-              sendNotes: _vm.sendNotes,
-              asesor: _vm.asesor,
-              loadMap: _vm.loadMap
-            }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.solucion && !_vm.mapa
-        ? _c("map-component", {
-            attrs: { lead: _vm.lead },
-            on: { back2: _vm.back2, updateDirection: _vm.updateDirection }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.mapa && !_vm.fin
-        ? _c("recibo-component", {
-            attrs: { lead_id: _vm.lead_id },
-            on: {
-              backMap: _vm.backMap,
-              enviarCorreo: _vm.enviarCorreo,
-              reciboLead: _vm.reciboLead
-            }
-          })
-        : _vm._e(),
+      _c("recibo-component", {
+        attrs: { lead_id: _vm.lead_id },
+        on: {
+          backMap: _vm.backMap,
+          enviarCorreo: _vm.enviarCorreo,
+          reciboLead: _vm.reciboLead
+        }
+      }),
       _vm._v(" "),
       _vm.personal && _vm.fin
         ? _c("fin-component", {
@@ -83721,9 +83687,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
             });
         },
         previewFiles: function previewFiles() {
-            this.file = this.$refs.myFile.files['0'].name;
-            this.name_file = this.file;
-            this.recibo = true;
+            console.log(this.$refs.myFile.files['0']);
+            // this.file = this.$refs.myFile.files['0'].name
+            // this.name_file = this.file
+            // this.recibo = true
         },
         backMap: function backMap() {
             this.$emit('backMap');
@@ -83794,7 +83761,7 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("h6", { staticClass: "text-white" }, [
+            _c("h6", { staticClass: "red" }, [
               _vm._v(_vm._s(_vm.errors.first("file")))
             ])
           ])

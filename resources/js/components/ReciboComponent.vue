@@ -18,7 +18,7 @@
                         <span>{{this.name_file}}</span>
                         <input type="file" ref="myFile" class="hidden" v-validate="'ext:jpeg,jpg,png,pdf'" data-vv-as="image" name="file" @change="previewFiles" v-on:change="onImageChange">
                     </label>    
-                    <h6 class="text-white">{{ errors.first('file') }}</h6>
+                    <h6 class="red">{{ errors.first('file') }}</h6>
                 </div>         
             </div>
             <div class="col-1"></div>
@@ -119,9 +119,10 @@
                 }); 
             },
             previewFiles() {
-                this.file = this.$refs.myFile.files['0'].name
-                this.name_file = this.file
-                this.recibo = true
+                console.log(this.$refs.myFile.files['0'])
+                // this.file = this.$refs.myFile.files['0'].name
+                // this.name_file = this.file
+                // this.recibo = true
             },
             backMap(){
                 this.$emit('backMap')
