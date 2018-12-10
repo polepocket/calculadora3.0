@@ -78195,7 +78195,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.lead.promo = personal.promo;
             this.lead.contacto_refiere = personal.contacto_refiere;
             this.lead.promo_convenio = personal.promo_convenio;
-            axios.post('calculadora3.0/leads', this.lead).then(function (response) {
+            axios.post('/leads', this.lead).then(function (response) {
                 if (_this.lead.consumption < 2500 || _this.lead.cp_perfila == "false") {
                     _this.fin = true;
                     _this.message.title = 'Gracias';
@@ -78207,7 +78207,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         editLead: function editLead(lead) {
             this.lead.consumption = lead.consumption;
-            axios.put('calculadora3.0/leads/' + this.lead_id, this.lead).then(function (response) {
+            axios.put('/leads/' + this.lead_id, this.lead).then(function (response) {
                 // console.log('Editado');
             });
         },
@@ -78226,7 +78226,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.lead.lat = lead.lat;
             this.lead.lng = lead.lng;
             this.lead.cp_perfila = lead.cp_perfila;
-            axios.put('calculadora3.0/leads/' + this.lead_id, this.lead).then(function (response) {
+            axios.put('/leads/' + this.lead_id, this.lead).then(function (response) {
                 _this2.mapa = true;
             });
         },
@@ -78588,7 +78588,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vue2_filters___default.a);
             if (numero != "" && code_postal != '') {
                 this.activo = true;
                 if (code_postal != '') {
-                    axios.get('calculadora3.0/codigos/' + code_postal).then(function (response) {
+                    axios.get('/codigos/' + code_postal).then(function (response) {
                         _this.cp = code_postal;
                         _this.cp_perfila = response.data.atendido;
                     });
@@ -82034,7 +82034,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
 
             if (this.email != '' && this.email != undefined) {
                 this.bandera = 1;
-                axios.get('calculadora3.0/leads/' + this.email).then(function (response) {
+                axios.get('/leads/' + this.email).then(function (response) {
                     if (!response.data.status) {
                         _this.$swal({
                             title: 'Lo sentimos',
@@ -82060,7 +82060,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
 
             if (this.code_promo != '' && this.code_promo != undefined) {
                 this.bandera = 1;
-                axios.get('calculadora3.0/promos/' + this.code_promo).then(function (response) {
+                axios.get('/promos/' + this.code_promo).then(function (response) {
                     if (!response.data.status) {
                         _this2.$swal({
                             title: 'Lo sentimos',
@@ -82723,7 +82723,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default.a);
         this.data.consumption = this.consumption;
         this.data.lead_id = this.lead_id;
         this.data.mty = this.mty;
-        axios.post('calculadora3.0/solution', this.data).then(function (response) {
+        axios.post('/solution', this.data).then(function (response) {
             _this.potencia = response.data.potencia_sistema;
             _this.consumo_cubierto = response.data.consumo_cubierto;
             _this.espacio_req = response.data.espacio;
@@ -82761,7 +82761,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default.a);
             this.data.consumption = this.consumption;
             this.data.lead_id = this.lead_id;
             this.data.mty = this.mty;
-            axios.post('calculadora3.0/solution', this.data).then(function (response) {
+            axios.post('/solution', this.data).then(function (response) {
                 _this2.$modal.hide('modal-edita-express');
                 _this2.potencia = response.data.potencia_sistema;
                 _this2.consumo_cubierto = response.data.consumo_cubierto;
@@ -83341,7 +83341,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
             if (numero != "" && code_postal != '') {
                 this.activo = true;
                 if (code_postal != '') {
-                    axios.get('calculadora3.0/codigos/' + code_postal).then(function (response) {
+                    axios.get('/codigos/' + code_postal).then(function (response) {
                         _this.code_postal = code_postal;
                         _this.cp_perfila = response.data.atendido;
                     });
@@ -83701,7 +83701,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
             formData.append('name_file', this.file.name);
             formData.append('lead_id', this.lead_id);
             var config = { headers: { 'Content-Type': 'multipart/form-data' } };
-            axios.post('calculadora3.0/recibo', formData, config).then(function (response) {
+            axios.post('/recibo', formData, config).then(function (response) {
                 if (response.data.response.result.message) {
                     _this.$emit('reciboLead');
                 } else {
