@@ -3,7 +3,7 @@
     <div class="content">
         <dimension-component v-if="!dimension" :lead="lead" @newLead="newLead"></dimension-component>
         <personales-component  v-if="dimension&&!personal" @personalLead="personalLead" @back1="back1"></personales-component>
-        <solucion-component v-if="dimension&&personal&&!solucion&&!fin" :mty="mty" :lead="lead" :lead_id="lead_id" @editLead="editLead" @sendNotes="sendNotes" @asesor="asesor" @loadMap="loadMap"></solucion-component>
+        <solucion-component v-if="dimension&&personal&&!solucion&&!fin" :mty="mty" :lead="lead" :lead_id="lead_id" @editLead="editLead" @asesor="asesor" @loadMap="loadMap"></solucion-component>
         <map-component v-if="solucion&&!mapa" :lead="lead" @back2="back2" @updateDirection="updateDirection"></map-component>
         <recibo-component v-if="mapa&&!fin" :lead_id="lead_id"  @backMap="backMap" @enviarCorreo="enviarCorreo" @reciboLead="reciboLead"></recibo-component>
         <fin-component v-if="personal&&fin" :lead="lead" :message="message"></fin-component>
@@ -98,18 +98,6 @@
                     }
                 );
             },
-            // sendNotes(lead) {
-            //     let notas = {
-            //         consumption : lead.consumption,
-            //         consumption_tmp : lead.consumption_tmp
-            //     }
-            //     axios.put('/sendNotes/'+this.lead_id, this.notas).then(
-            //         (response) =>
-            //         {
-            //             this.mapa = true;
-            //         }
-            //     );
-            // },
             reciboLead(lead){
                 this.fin = true
                 this.message.title = 'Gracias'

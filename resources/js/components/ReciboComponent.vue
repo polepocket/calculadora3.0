@@ -103,7 +103,7 @@
             uploadImage(){
                 let formData = new FormData();
                 formData.append('file', this.file);
-                formData.append('name_file', this.file.name);
+                // formData.append('name_file', this.file.name);
                 formData.append('lead_id', this.lead_id);
                 let config = { headers: { 'Content-Type': 'multipart/form-data' } }
                 axios.post('recibo', formData, config).then(response => {
@@ -122,11 +122,14 @@
             previewFiles() {
                 var tipo = this.$refs.myFile.files['0'].type;
                 if(tipo == 'image/jpeg' || tipo == 'image/png' || tipo == 'application/pdf' || tipo == 'image/jpg'){
-                    this.file = this.$refs.myFile.files['0'].name
+                    var name_file = this.$refs.myFile.files['0'].name
+                    var n = name_file.length;
+                    if(n > 15){ this.name_file = 'Recibo seleccionado' }
+                    else { this.name_file = name_file }
                     this.error = ''
-                    this.name_file = this.file
                     this.recibo = true    
                 }else{
+                    this.name_file = ''
                     this.recibo = false 
                     this.error = 'Selecciona una foto o archivo pdf'
                 }
