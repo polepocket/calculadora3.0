@@ -55,7 +55,7 @@
                 this.lead.promo = personal.promo;
                 this.lead.contacto_refiere = personal.contacto_refiere;
                 this.lead.promo_convenio = personal.promo_convenio
-                axios.post('../leads', this.lead).then(
+                axios.post('/leads', this.lead).then(
                     (response) =>
                     {
                         if(this.lead.consumption < 2500 || this.lead.cp_perfila == "false")
@@ -71,7 +71,7 @@
             },
             editLead(lead) {
                 this.lead.consumption = lead.consumption;
-                axios.put('../leads/'+this.lead_id, this.lead).then(
+                axios.put('/leads/'+this.lead_id, this.lead).then(
                     (response) =>
                     {
                         // console.log('Editado');
@@ -91,7 +91,7 @@
                 this.lead.lat = lead.lat;
                 this.lead.lng = lead.lng;
                 this.lead.cp_perfila = lead.cp_perfila; 
-                axios.put('../leads/'+this.lead_id, this.lead).then(
+                axios.put('/leads/'+this.lead_id, this.lead).then(
                     (response) =>
                     {
                         this.mapa = true;

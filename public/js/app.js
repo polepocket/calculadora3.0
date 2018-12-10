@@ -78195,7 +78195,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.lead.promo = personal.promo;
             this.lead.contacto_refiere = personal.contacto_refiere;
             this.lead.promo_convenio = personal.promo_convenio;
-            axios.post('../leads', this.lead).then(function (response) {
+            axios.post('/leads', this.lead).then(function (response) {
                 if (_this.lead.consumption < 2500 || _this.lead.cp_perfila == "false") {
                     _this.fin = true;
                     _this.message.title = 'Gracias';
@@ -78207,7 +78207,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         editLead: function editLead(lead) {
             this.lead.consumption = lead.consumption;
-            axios.put('../leads/' + this.lead_id, this.lead).then(function (response) {
+            axios.put('/leads/' + this.lead_id, this.lead).then(function (response) {
                 // console.log('Editado');
             });
         },
@@ -78226,7 +78226,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.lead.lat = lead.lat;
             this.lead.lng = lead.lng;
             this.lead.cp_perfila = lead.cp_perfila;
-            axios.put('../leads/' + this.lead_id, this.lead).then(function (response) {
+            axios.put('/leads/' + this.lead_id, this.lead).then(function (response) {
                 _this2.mapa = true;
             });
         },
@@ -81805,7 +81805,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "p-3" }, [
-              _c("img", { attrs: { src: "asset('img/direccion.png')" } }),
+              _c("img", { attrs: { src: "img/direccion.png" } }),
               _vm._v(" "),
               _c(
                 "p",
