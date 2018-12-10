@@ -2,11 +2,11 @@
     <div class="content">
         <div class="title bg-express-grad bg-h-recibo">
             <div class="col-1">
-                <button class="btn-up" v-on:click="backMap()">
+                <button class="btn-back" v-on:click="backMap()">
                     <v-icon name="arrow-left" scale="1"/>
                 </button> 
-                <div class="div-up">
-                    <span class="text-white">Volver</span>
+                <div class="div-back">
+                    <!-- <span class="text-white">Volver</span> -->
                 </div>   
             </div>
             
