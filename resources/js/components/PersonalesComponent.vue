@@ -121,7 +121,7 @@
                 findEmail() {
                     if(this.email != '' && this.email != undefined) {
                         this.bandera = 1;
-                        axios.get('/leads/'+this.email).then(
+                        axios.get('leads/'+this.email).then(
                             (response) => {
                                 if (!response.data.status) {         
                                     this.$swal({
@@ -146,7 +146,7 @@
                     if(this.code_promo != '' && this.code_promo != undefined)
                     {
                         this.bandera = 1
-                        axios.get('/promos/'+this.code_promo).then(
+                        axios.get('promos/'+this.code_promo).then(
                             (response) => {
                                 if (!response.data.status) {         
                                     this.$swal({

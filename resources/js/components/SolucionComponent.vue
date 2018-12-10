@@ -175,7 +175,7 @@
                 this.data.consumption = this.consumption
                 this.data.lead_id = this.lead_id
                 this.data.mty = this.mty
-                axios.post('/solution', this.data).then(
+                axios.post('solution', this.data).then(
                     (response) =>
                     {
                         this.potencia = response.data.potencia_sistema

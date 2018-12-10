@@ -140,7 +140,7 @@
                 if(numero != "" && code_postal != ''){
                     this.activo = true;
                     if(code_postal != ''){
-                        axios.get('/codigos/'+code_postal).then((response => {
+                        axios.get('codigos/'+code_postal).then((response => {
                             this.code_postal = code_postal
                             this.cp_perfila = response.data.atendido
                         }))     
