@@ -15,7 +15,8 @@ class ReciboController extends Controller
     {   
         $token      = "0fc99739003c3133fc7b7fab6b99c387";
         $lead_id    = $request->get('lead_id');//"1850660000073289942";
-        $name_file  = $request->get('name_file');
+        // $name_file  = $request->get('name_file');
+        $name_file  = 'recibo_'.$lead_id; 
         $name       = $request->file('file')->storeAs(
             'public', $name_file
         );
@@ -33,6 +34,7 @@ class ReciboController extends Controller
 
         $response=curl_exec($ch);
         curl_close($ch);
+        Storage::delete($name_file);
         return $response;
     }
 }
