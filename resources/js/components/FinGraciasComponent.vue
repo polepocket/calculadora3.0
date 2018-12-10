@@ -10,13 +10,13 @@
                 <p class="fin">¡Síguenos en nuestras redes!</p>
                 <div class="offset-sm-3 col-sm-6 row">
                     <div class="col-4">
-                        <a href=""><img src="img/insta1.png" alt=""></a>
+                        <a href="https://www.instagram.com/enlightmx/" target="_blank"><img src="img/insta1.png" alt=""></a>
                     </div>
                     <div class="col-4">
-                        <a href=""><img src="img/twitter1.png" alt=""></a>
+                        <a href="https://twitter.com/Enlightmx" target="_blank"><img src="img/twitter1.png" alt=""></a>
                     </div>
                     <div class="col-4">
-                        <a href=""><img src="img/fb1.png" alt=""></a>
+                        <a href="https://www.facebook.com/Enlight.mx/" target="_blank"><img src="img/fb1.png" alt=""></a>
                     </div>
                 </div>
             </div>

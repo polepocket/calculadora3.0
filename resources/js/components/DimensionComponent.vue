@@ -198,7 +198,7 @@
                     this.$swal({
                         title: 'Dirección incompleta',
                         text: "Asegúrate de incluir el número de la casa",
-                        type: 'error',
+                        type: 'info',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'Aceptar'

@@ -21,15 +21,15 @@
                     <div class="col-md-6">
                         <h4>Proporciona tus datos para ver tu solución:</h4>  
                         <input type="text" @blur="validName()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus()}" placeholder="Nombre completo*" v-model="name" name="name" v-validate="'required'">
-                        <span>{{ errors.first('name') }}</span>
+                        <span class="text-red">{{ errors.first('name') }}</span>
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="email" @blur="findEmail()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Email*" name="email" v-model="email" v-validate="'required|email'" data-vv-as="email">
-                                <span>{{ errors.first('email') }}</span>
+                                <span class="text-red">{{ errors.first('email') }}</span>
                             </div>
                             <div class="col-md-6">
                                 <input v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Teléfono*" v-model="phone" name="phone" type="text" v-validate="'required|numeric|min:7|max:12'">
-                                <span>{{ errors.first('phone') }}</span>
+                                <span class="text-red">{{ errors.first('phone') }}</span>
                             </div>    
                         </div>      
                     </div>
@@ -127,7 +127,7 @@
                                     this.$swal({
                                         title: 'Lo sentimos',
                                         text: "El correo "+this.email+" ha sido utilizado previamente, para continuar ingresa otro correo.",
-                                        type: 'error',
+                                        type: 'info',
                                         showCancelButton: false,
                                         confirmButtonColor: '#3085d6',
                                         confirmButtonText: 'Aceptar'
@@ -152,7 +152,7 @@
                                     this.$swal({
                                         title: 'Lo sentimos',
                                         text: "El código ingresado no existe; por favor, ingresa un código válido.",
-                                        type: 'error',
+                                        type: 'info',
                                         showCancelButton: false,
                                         confirmButtonColor: '#3085d6',
                                         confirmButtonText: 'Aceptar'
@@ -172,7 +172,7 @@
                                         this.$swal({
                                             title: 'Lo sentimos',
                                             text: "Esta promoción ya no está vigente. Ingresa un código distinto.",
-                                            type: 'error',
+                                            type: 'info',
                                             showCancelButton: false,
                                             confirmButtonColor: '#3085d6',
                                             confirmButtonText: 'Aceptar'
@@ -216,7 +216,7 @@
                                     }).then((result) => {
                                         if (result.value) {
                                             this.bandera = 2
-                                            this.code_promo = response.data.nombre_promo
+                                            this.code_promo = response.data.contacto
                                             this.promo_convenio = '';
                                             this.contacto_refiere = response.data.contacto;
                                             this.active = true

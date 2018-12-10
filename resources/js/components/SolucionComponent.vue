@@ -232,7 +232,7 @@
                         this.$swal({
                             title: '',
                             text: "Ingresa un número mayor a $2,500",
-                            type: 'error',
+                            type: 'info',
                             showCancelButton: false,
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'Aceptar'

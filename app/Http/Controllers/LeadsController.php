@@ -60,7 +60,10 @@ class LeadsController extends Controller
         $nombre_completo = explode(" ", $name);
         $name = $nombre_completo[0];
         if(count($nombre_completo) > 1){
-            $last_name = $nombre_completo[count($nombre_completo) - 1];
+            $last_name = $nombre_completo[1];
+        }
+        else{
+            $last_name = $nombre_completo[0];
         }
         if($request->input('source'))
         {

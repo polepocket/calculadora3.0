@@ -118,6 +118,7 @@
                     draggable: true,
                     icon: 'img/marker-green.png'
                 }
+                
                 this.components = place.address_components;
                 // this.components.map(function(value, key) {
                 //     if(value.types[0] == "postal_code"){
@@ -154,7 +155,7 @@
                     this.$swal({
                         title: 'Dirección incompleta',
                         text: "Asegúrate de incluir el número de la casa",
-                        type: 'error',
+                        type: 'info',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'Aceptar'
@@ -170,6 +171,7 @@
                     icon: 'img/marker-move.png'
                 }
                 if (this.currentPlace) {
+                    this.direction = this.currentPlace.formatted_address
                     this.lat = this.currentPlace.geometry.location.lat()
                     this.lng = this.currentPlace.geometry.location.lng()
                     this.marker = {
