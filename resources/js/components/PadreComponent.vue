@@ -1,11 +1,11 @@
 
 <template>    
     <div class="content">
-        <!--  v-if="mapa&&!fin"<dimension-component v-if="!dimension" :lead="lead" @newLead="newLead"></dimension-component>
+        <dimension-component v-if="!dimension" :lead="lead" @newLead="newLead"></dimension-component>
         <personales-component  v-if="dimension&&!personal" @personalLead="personalLead" @back1="back1"></personales-component>
         <solucion-component v-if="dimension&&personal&&!solucion&&!fin" :mty="mty" :lead="lead" :lead_id="lead_id" @editLead="editLead" @sendNotes="sendNotes" @asesor="asesor" @loadMap="loadMap"></solucion-component>
-        <map-component v-if="solucion&&!mapa" :lead="lead" @back2="back2" @updateDirection="updateDirection"></map-component> -->
-        <recibo-component :lead_id="lead_id"  @backMap="backMap" @enviarCorreo="enviarCorreo" @reciboLead="reciboLead"></recibo-component>
+        <map-component v-if="solucion&&!mapa" :lead="lead" @back2="back2" @updateDirection="updateDirection"></map-component>
+        <recibo-component v-if="mapa&&!fin" :lead_id="lead_id"  @backMap="backMap" @enviarCorreo="enviarCorreo" @reciboLead="reciboLead"></recibo-component>
         <fin-component v-if="personal&&fin" :lead="lead" :message="message"></fin-component>
     </div>
 </template>

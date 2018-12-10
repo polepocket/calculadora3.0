@@ -20,23 +20,21 @@ class ReciboController extends Controller
         $name       = $request->file('file')->storeAs(
             'public', $name_file
         );
-        print_r($name_file);
-        print_r($name);
-        // $path = '../storage/app/public/'.$name_file;
-        // $ch=curl_init("https://crm.zoho.com/crm/private/json/Leads/uploadFile?authtoken=$token&scope=crmapi&id=$lead_id");
-        // curl_setopt($ch,CURLOPT_HEADER,0);
-        // curl_setopt($ch,CURLOPT_VERBOSE,1);
-        // curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
-        // curl_setopt($ch,CURLOPT_POST,true);
+        $path = '../storage/app/public/'.$name_file;
+        $ch=curl_init("https://crm.zoho.com/crm/private/json/Leads/uploadFile?authtoken=$token&scope=crmapi&id=$lead_id");
+        curl_setopt($ch,CURLOPT_HEADER,0);
+        curl_setopt($ch,CURLOPT_VERBOSE,1);
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($ch,CURLOPT_POST,true);
 
-        // $queryzoho=array("content"=> curl_file_create($path));
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, $queryzoho);   
+        $queryzoho=array("content"=> curl_file_create($path));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $queryzoho);   
 
-        // $response=curl_exec($ch);
-        // curl_close($ch);
-        // Storage::delete($name_file);
-        // // return $response;
+        $response=curl_exec($ch);
+        curl_close($ch);
+        Storage::delete($name_file);
+        return $response;
     }
 }

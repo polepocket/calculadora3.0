@@ -21,15 +21,15 @@
                     <div class="col-md-6">
                         <h4>Proporciona tus datos para ver tu solución:</h4>  
                         <input type="text" @blur="validName()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus()}" placeholder="Nombre completo*" v-model="name" name="name" v-validate="'required'">
-                        <span class="text-red">{{ errors.first('name') }}</span>
+                        <span class="text-danger">{{ errors.first('name') }}</span>
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="email" @blur="findEmail()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Email*" name="email" v-model="email" v-validate="'required|email'" data-vv-as="email">
-                                <span class="text-red">{{ errors.first('email') }}</span>
+                                <span class="text-danger">{{ errors.first('email') }}</span>
                             </div>
                             <div class="col-md-6">
                                 <input v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Teléfono*" v-model="phone" name="phone" type="text" v-validate="'required|numeric|min:7|max:12'">
-                                <span class="text-red">{{ errors.first('phone') }}</span>
+                                <span class="text-danger">{{ errors.first('phone') }}</span>
                             </div>    
                         </div>      
                     </div>

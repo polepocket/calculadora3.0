@@ -18,7 +18,7 @@
                         <span>{{this.name_file}}</span>
                         <input type="file" ref="myFile" class="hidden" v-validate="'ext:jpeg,jpg,png,pdf'" data-vv-as="image" name="file" @change="previewFiles" v-on:change="onImageChange">
                     </label>    
-                    <h6 class="red">{{ error }}</h6>
+                    <h6 class="text-danger">{{ error }}</h6>
                 </div>         
             </div>
             <div class="col-1"></div>
@@ -123,6 +123,7 @@
                 var tipo = this.$refs.myFile.files['0'].type;
                 if(tipo == 'image/jpeg' || tipo == 'image/png' || tipo == 'application/pdf' || tipo == 'image/jpg'){
                     this.file = this.$refs.myFile.files['0'].name
+                    this.error = ''
                     this.name_file = this.file
                     this.recibo = true    
                 }else{
