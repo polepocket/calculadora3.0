@@ -78588,7 +78588,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vue2_filters___default.a);
             if (numero != "" && code_postal != '') {
                 this.activo = true;
                 if (code_postal != '') {
-                    axios.get(Object({"MIX_PUSHER_APP_CLUSTER":"mt1","MIX_PUSHER_APP_KEY":"","NODE_ENV":"development"}).MIX_API_URL + '/codigos/' + code_postal).then(function (response) {
+                    axios.get(Object({"MIX_PUSHER_APP_CLUSTER":"mt1","MIX_PUSHER_APP_KEY":"","NODE_ENV":"development"}).MIX_API_URL + 'codigos/' + code_postal).then(function (response) {
                         _this.cp = code_postal;
                         _this.cp_perfila = response.data.atendido;
                     });
