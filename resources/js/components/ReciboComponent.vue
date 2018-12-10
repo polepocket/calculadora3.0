@@ -16,9 +16,9 @@
                     <p class="text-white big-2">¡Envíanos tu recibo de luz para poder adecuar nuestra propuesta a tu forma de consumir energía!</p>
                     <label class="btn btn-file block">
                         <span>{{this.name_file}}</span>
+                        <span class="text-danger">{{ error }}</span>
                         <input type="file" ref="myFile" class="hidden" v-validate="'ext:jpeg,jpg,png,pdf'" data-vv-as="image" name="file" @change="previewFiles" v-on:change="onImageChange">
                     </label>    
-                    <h6 class="text-danger">{{ error }}</h6>
                 </div>         
             </div>
             <div class="col-1"></div>
