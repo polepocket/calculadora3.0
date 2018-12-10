@@ -23,8 +23,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-	$this->app->bind('path.public', function() {
-		return base_path().'/calculadora3.0/public'; 
-	});
+        $this->app->bind('path.public', function() {
+            // return base_path().'/calculadora3.0/public'; 
+            return __DIR__; 
+        });
+        // $this->app->bind('path.public', function() {
+        //     return realpath(base_path().'/../');
+        // });
     }
 }
