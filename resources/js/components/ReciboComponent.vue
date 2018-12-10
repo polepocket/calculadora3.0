@@ -123,8 +123,10 @@
                 var tipo = this.$refs.myFile.files['0'].type;
                 if(tipo == 'image/jpeg' || tipo == 'image/png' || tipo == 'application/pdf' || tipo == 'image/jpg'){
                     var name_file = this.$refs.myFile.files['0'].name
+                    console.log(name_file)
                     var n = name_file.length;
-                    if(n > 15){ this.name_file = 'Recibo seleccionado' }
+                    console.log(n)
+                    if(n > 25){ this.name_file = 'Recibo seleccionado' }
                     else { this.name_file = name_file }
                     this.error = ''
                     this.recibo = true    
