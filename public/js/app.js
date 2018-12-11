@@ -84092,7 +84092,7 @@ var render = function() {
       _c("div", { staticClass: "content-calcu" }, [
         _c("div", { staticClass: "div-sol" }, [
           _c("img", {
-            staticClass: "p-4 show_movil",
+            staticClass: "pt-4 pl-4 pr-4 show_movil",
             attrs: { src: "img/logo_header.png", width: "100" }
           }),
           _vm._v(" "),
