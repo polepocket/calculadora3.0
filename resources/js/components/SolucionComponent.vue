@@ -3,7 +3,7 @@
         <div class="title-sol bg-grad">
             <div class="div-sol">                        
                 <h1 class="w-100">Tu solución Enlight</h1>
-                <div class="row">
+                <div class="row pt-3 pb-3">
                     <div class="col-4">
                         <h2 class="w-100 text-white"><span class="w-100 text-white"> {{ this.potencia | currency('', 2)}}</span> <sup>kWp</sup></h2>
                         <h3 class="sol w-100 text-white">Potencia del sistema</h3>
@@ -29,7 +29,7 @@
         </div>  
         <div class="content-calcu">
             <div class="div-sol">
-                <img src="img/logo_header.png" width="60" class="pt-3 show_movil">
+                <img src="img/logo_header.png" width="60" class="p-4 show_movil">
                 <h2 class="col-blue-enlight bold p-3 pt-4 ahorro">¡Ahorrarás {{ this.ahorro_bimestral | currency('$', 0) }} <br class="show_movil"> cada bimestre!</h2>  
                 <hr class="show_movil">
                 <div class="row">

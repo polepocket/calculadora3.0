@@ -82967,6 +82967,7 @@ var render = function() {
         {
           attrs: {
             name: "modal-why",
+            adaptive: true,
             "max-width": 500,
             "max-height": 500,
             width: "80%",
@@ -84028,7 +84029,7 @@ var render = function() {
         _c("div", { staticClass: "div-sol" }, [
           _c("h1", { staticClass: "w-100" }, [_vm._v("Tu solución Enlight")]),
           _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "row pt-3 pb-3" }, [
             _c("div", { staticClass: "col-4" }, [
               _c("h2", { staticClass: "w-100 text-white" }, [
                 _c("span", { staticClass: "w-100 text-white" }, [
@@ -84091,7 +84092,7 @@ var render = function() {
       _c("div", { staticClass: "content-calcu" }, [
         _c("div", { staticClass: "div-sol" }, [
           _c("img", {
-            staticClass: "pt-3 show_movil",
+            staticClass: "p-4 show_movil",
             attrs: { src: "img/logo_header.png", width: "60" }
           }),
           _vm._v(" "),
