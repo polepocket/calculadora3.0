@@ -101,6 +101,7 @@
                     phone : undefined,
                     errors_name : '',
                     errors_email : '',
+                    errors_phone : '',
                     code_promo : undefined,
                     bandera : 0,
                     contacto_refiere : undefined,

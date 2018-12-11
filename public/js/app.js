@@ -58030,39 +58030,25 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 $(document).keydown(function (event) {
-				if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
-								event.preventDefault();
-				}
-				// 107 Num Key  +
-				// 109 Num Key  -
-				// 173 Min Key  hyphen/underscor Hey
-				// 61 Plus key  +/= key
+	if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
+		event.preventDefault();
+	}
+	// 107 Num Key  +
+	// 109 Num Key  -
+	// 173 Min Key  hyphen/underscor Hey
+	// 61 Plus key  +/= key
 });
 
 $(window).bind('mousewheel DOMMouseScroll', function (event) {
-				if (event.ctrlKey == true) {
-								event.preventDefault();
-				}
+	if (event.ctrlKey == true) {
+		event.preventDefault();
+	}
 });
-window.addEventListener('popstate', function (event) {
-				// The popstate event is fired each time when the current history entry changes.
 
-				var r = confirm("You pressed a Back button! Are you sure?!");
-				alert('Presionaste el botón');
-				console.log('PResionó back');
-				if (r == true) {
-								// Call Back button programmatically as per user confirmation.
-								// history.back();
-								event.preventDefault();
-								// Uncomment below line to redirect to the previous page instead.
-								// window.location = document.referrer // Note: IE11 is not supporting this.
-				} else {
-								// Stay on the current page.
-								history.pushState(null, null, window.location.pathname);
-				}
-
-				history.pushState(null, null, window.location.pathname);
-}, false);
+window.onhashchange = function (event) {
+	console.log('Se hizo clic a back');
+	event.preventDefault();
+};
 
 /***/ }),
 /* 55 */
@@ -83230,6 +83216,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
             phone: undefined,
             errors_name: '',
             errors_email: '',
+            errors_phone: '',
             code_promo: undefined,
             bandera: 0,
             contacto_refiere: undefined,
