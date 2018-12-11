@@ -1,5 +1,5 @@
 require('./bootstrap');
-
+require('es6-promise').polyfill();
 window.Vue = require('vue');
  
 // or import all icons if you don't care about bundle size
