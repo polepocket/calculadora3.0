@@ -16,18 +16,21 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
 
 document.onmouseover = function() {
     //User's mouse is inside the page.
-    window.innerDocClick = true;
+	window.innerDocClick = true;
+	console.log(window.innerDocClick);
 }
 document.onmouseleave = function() {
     //User's mouse has left the page.
     window.innerDocClick = false;
+	console.log(window.innerDocClick);
 }
-window.onhashchange = function(event) {
+window.onhashchange = function() {	
+	console.log(window.innerDocClick);
     if (window.innerDocClick) {
         //Your own in-page mechanism triggered the hash change
     } else {
 		//Browser back button was clicked
-		event.preventDefault();
+		// event.preventDefault();
 		preventDefault();
 		console.log('Se hizo clic en el botón Back');
     }
