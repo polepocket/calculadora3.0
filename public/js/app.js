@@ -82967,7 +82967,6 @@ var render = function() {
         {
           attrs: {
             name: "modal-why",
-            adaptive: true,
             "max-width": 500,
             "max-height": 500,
             width: "80%",
