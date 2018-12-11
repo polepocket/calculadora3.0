@@ -59,7 +59,7 @@
             :max-width="500"
             :max-height="500"
             width="80%"
-            height="80%">
+            height="78%">
             <div style="text-align: center">
                 <h3 class="m-title text-blue-enlight pt-4">¿Para qué necesitamos tu dirección?</h3>
                 <div class="p-3">
