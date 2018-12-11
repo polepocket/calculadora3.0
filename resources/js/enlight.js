@@ -14,7 +14,35 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
 	}
 });
 
-window.onhashchange = function(event) {
-	console.log('Se hizo clic a back');
-	event.preventDefault();
+document.onmouseover = function() {
+    //User's mouse is inside the page.
+    window.innerDocClick = true;
 }
+document.onmouseleave = function() {
+    //User's mouse has left the page.
+    window.innerDocClick = false;
+}
+window.onhashchange = function(event) {
+    if (window.innerDocClick) {
+        //Your own in-page mechanism triggered the hash change
+    } else {
+		//Browser back button was clicked
+		event.preventDefault();
+		preventDefault();
+		console.log('Se hizo clic en el botón Back');
+    }
+}
+$(function(){
+    /*
+     * this swallows backspace keys on any non-input element.
+     * stops backspace -> back
+     */
+    var rx = /INPUT|SELECT|TEXTAREA/i;
+    $(document).bind("keydown keypress", function(e){
+        if( e.which == 8 ){ // 8 == backspace
+            if(!rx.test(e.target.tagName) || e.target.disabled || e.target.readOnly ){
+                e.preventDefault();
+            }
+        }
+    });
+});
