@@ -84,6 +84,12 @@
     .map {
         width: 100%;
     }
+
+    
+    .img-responsive {
+        max-width: 100%;
+        height: auto;
+    }
 /* ESTILOS PARA ESCRITORIO */
 
 @media screen and (min-width: 767px) {    
@@ -272,7 +278,7 @@
 @media screen and (max-width: 767px) { 
     
     p.big {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
         padding:  0 4vw 0 4vw;
     }
     .bg-h-all {
