@@ -81975,6 +81975,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_sweetalert2__["a" /* default */]);
@@ -81995,7 +82004,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
             name: undefined,
             email: undefined,
             phone: undefined,
-
+            errors_name: [],
+            errors_email: [],
             code_promo: undefined,
             bandera: 0,
             contacto_refiere: undefined,
@@ -82014,7 +82024,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
         validName: function validName() {
             var re = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}/;
             if (!re.test(this.name)) {
-                errors.name.push('Es requerido un nombre y apellido');
+                this.errors_name.push('Es requerido un nombre y apellido');
+            } else {
+                this.errors_email = [];
             }
         },
 
@@ -82030,8 +82042,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
 
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (!re.test(this.email)) {
-                errors.email.push('Ingresa un correo válido');
+                this.errors_email.push('Ingresa un correo válido');
             } else {
+                this.errors_email = [];
                 if (this.email != '' && this.email != undefined) {
                     this.bandera = 1;
                     axios.get('leads/' + this.email).then(function (response) {
@@ -82252,6 +82265,15 @@ var render = function() {
                   _vm._v(_vm._s(_vm.errors.first("name")))
                 ]),
                 _vm._v(" "),
+                _c(
+                  "ul",
+                  _vm._l(_vm.errors_name, function(error) {
+                    return _c("li", { staticClass: "text-danger" }, [
+                      _vm._v(_vm._s(error))
+                    ])
+                  })
+                ),
+                _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("input", {
@@ -82296,7 +82318,16 @@ var render = function() {
                     _vm._v(" "),
                     _c("span", { staticClass: "text-danger" }, [
                       _vm._v(_vm._s(_vm.errors.first("email")))
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      _vm._l(_vm.errors_email, function(error) {
+                        return _c("li", { staticClass: "text-danger" }, [
+                          _vm._v(_vm._s(error))
+                        ])
+                      })
+                    )
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
@@ -82338,7 +82369,16 @@ var render = function() {
                     _vm._v(" "),
                     _c("span", { staticClass: "text-danger" }, [
                       _vm._v(_vm._s(_vm.errors.first("phone")))
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      _vm._l(_vm.errors_email, function(error) {
+                        return _c("li", { staticClass: "text-danger" }, [
+                          _vm._v(_vm._s(error))
+                        ])
+                      })
+                    )
                   ])
                 ])
               ]),

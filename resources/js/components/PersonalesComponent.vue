@@ -22,14 +22,23 @@
                         <h4>Proporciona tus datos para ver tu solución:</h4>  
                         <input type="text" @blur="validName()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus()}" placeholder="Nombre completo*" v-model="name" name="name" v-validate="'required'">
                         <span class="text-danger">{{ errors.first('name') }}</span>
+                        <ul>
+                            <li class="text-danger" v-for="error in errors_name">{{error}}</li>
+                        </ul>
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="email" @blur="findEmail()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Email*" name="email" v-model="email" v-validate="'required|email'" data-vv-as="email">
                                 <span class="text-danger">{{ errors.first('email') }}</span>
+                                <ul>
+                                    <li class="text-danger" v-for="error in errors_email">{{error}}</li>
+                                </ul>
                             </div>
                             <div class="col-md-6">
                                 <input v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Teléfono*" v-model="phone" name="phone" type="text" v-validate="'required|numeric|min:7|max:12'">
                                 <span class="text-danger">{{ errors.first('phone') }}</span>
+                                <ul>
+                                    <li class="text-danger" v-for="error in errors_email">{{error}}</li>
+                                </ul>
                             </div>    
                         </div>      
                     </div>
@@ -99,7 +108,8 @@
                     name : undefined,
                     email : undefined,
                     phone : undefined,
-
+                    errors_name : [],
+                    errors_email : [],
                     code_promo : undefined,
                     bandera : 0,
                     contacto_refiere : undefined,
@@ -117,7 +127,10 @@
                 validName() {
                     var re = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}/
                     if(!re.test(this.name)){        
-                        errors.name.push('Es requerido un nombre y apellido');
+                        this.errors_name.push('Es requerido un nombre y apellido');
+                    }
+                    else{
+                        this.errors_email = []
                     }
                 },
                 // validEmail() {
@@ -130,9 +143,10 @@
                 findEmail() {
                     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     if(!re.test(this.email)){
-                        errors.email.push('Ingresa un correo válido')
+                        this.errors_email.push('Ingresa un correo válido')
                     }
                     else{
+                        this.errors_email = []
                         if(this.email != '' && this.email != undefined) {
                             this.bandera = 1;
                             axios.get('leads/'+this.email).then(
