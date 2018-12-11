@@ -82981,10 +82981,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "p-3" }, [
-              _c("img", {
-                staticClass: "img-responsive",
-                attrs: { src: "img/direccion.png" }
-              }),
+              _c("img", { attrs: { src: "img/direccion.png" } }),
               _vm._v(" "),
               _c(
                 "p",

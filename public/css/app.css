@@ -10478,17 +10478,14 @@ a.text-dark:focus {
 
 @font-face {
   font-family: 'Gibson';
-  font-style: regular;
-  /* font-weight: 400; */
-  src: url("../fonts/Gibson-Regular.eot");
+  font-style: regular;  src: url("../fonts/Gibson-Regular.eot");
   src: local("Gibson-Regular"), local("Gibson-Regular"), url("../fonts/Gibson-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Gibson-Regular.woff") format("woff"), url("../fonts/Gibson-Regular.ttf") format("truetype"), url("../fonts/Gibson-Regular.svg#Gibson") format("svg");
 }
 
 @font-face {
   font-family: 'Gibson Light';
   font-style: light;
-  /* font-weight: 400; */
-  src: url("../fonts/Gibson-Light.eot");
+  /* font-weight: 400; */  src: url("../fonts/Gibson-Light.eot");
   src: local("Gibson-Light"), local("Gibson-Light"), url("../fonts/Gibson-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Gibson-Light.woff") format("woff"), url("../fonts/Gibson-Light.ttf") format("truetype"), url("../fonts/Gibson-Light.svg#Gibson") format("svg");
 }
 
@@ -10553,11 +10550,6 @@ p {
 
 .map {
   width: 100%;
-}
-
-.img-responsive {
-  max-width: 100%;
-  height: auto;
 }
 
 /* ESTILOS PARA ESCRITORIO */
@@ -10769,7 +10761,7 @@ h2.modal-title {
 
 @media screen and (max-width: 767px) {
   p.big {
-    font-size: 1rem !important;
+    font-size: .9rem !important;
     padding: 0 4vw 0 4vw;
   }
 
