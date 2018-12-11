@@ -35945,6 +35945,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_awesome_components_Icon__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_awesome_components_Icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_awesome_components_Icon__);
 __webpack_require__(31);
+__webpack_require__(1515);
 __webpack_require__(54).polyfill();
 window.Vue = __webpack_require__(22);
 
@@ -85519,6 +85520,27 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 1514 */,
+/* 1515 */
+/***/ (function(module, exports) {
+
+$(document).keydown(function (event) {
+	if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
+		event.preventDefault();
+	}
+	// 107 Num Key  +
+	// 109 Num Key  -
+	// 173 Min Key  hyphen/underscor Hey
+	// 61 Plus key  +/= key
+});
+
+$(window).bind('mousewheel DOMMouseScroll', function (event) {
+	if (event.ctrlKey == true) {
+		event.preventDefault();
+	}
+});
 
 /***/ })
 /******/ ]);

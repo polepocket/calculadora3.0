@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./enlight');
 require('es6-promise').polyfill();
 window.Vue = require('vue');
  

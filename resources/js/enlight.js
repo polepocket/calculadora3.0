@@ -1,38 +1,15 @@
-
-
-function myMap() {
-	var mapProp= {
-	    center:new google.maps.LatLng(19.3274833,-99.228705),
-	    zoom: 19,
-	    mapTypeId: google.maps.MapTypeId.SATELLITE,
-	    scaleControl: false,
-	    streetViewControl: false,
-	    overviewMapControl: false
-	};
-	var marker = new google.maps.Marker(
-	{
-	    position: mapProp['center'],
-	    icon : 'img/marker-move.png'
-	});
-	var map=new google.maps.Map(document.getElementById("map"),mapProp);
-	map.setTilt(0);
-	marker.setMap(map);
-	google.maps.event.addListener(map,'click',function() {
-	    marker.setMap(null);
-	    $('#map').removeClass('sombra');
-	    marker = new google.maps.Marker(
-	    {
-	        position: mapProp['center'],
-	        icon : 'img/marker-green.png'
-	    });
-	    marker.setMap(map);
-	});
-	function placeMarker(map, location) {
-	    marker = new google.maps.Marker({
-	        position: location,
-	        map: map,
-	        icon : 'img/marker-move.png',
-	    });
-	    infowindow.open(map,marker);
+$(document).keydown(function(event) {
+	if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
+		event.preventDefault();
 	}
-}
+	// 107 Num Key  +
+	// 109 Num Key  -
+	// 173 Min Key  hyphen/underscor Hey
+	// 61 Plus key  +/= key
+});
+
+$(window).bind('mousewheel DOMMouseScroll', function (event) {
+	if (event.ctrlKey == true) {
+	event.preventDefault();
+	}
+});
