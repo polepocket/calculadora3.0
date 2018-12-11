@@ -20,15 +20,15 @@
                 <div class="row pt-5">
                     <div class="col-md-6">
                         <h4>Proporciona tus datos para ver tu solución:</h4>  
-                        <input type="text" @blur="validName()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus()}" placeholder="Nombre completo*" v-model="name" name="name" v-validate="'required'">
+                        <input type="text" @keyup="validName()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus()}" placeholder="Nombre completo*" v-model="name" name="name" v-validate="'required'">
                         <span class="text-danger">{{ errors_name }}</span>
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="email" @blur="findEmail()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Email*" name="email" v-model="email" v-validate="'required|email'" data-vv-as="email">
+                                <input type="email" @keyup="validEmail" @blur="findEmail()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Email*" name="email" v-model="email" v-validate="'required|email'" data-vv-as="email">
                                 <span class="text-danger">{{ errors_email }}</span>
                             </div>
                             <div class="col-md-6">
-                                <input @blur="validPhone()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Teléfono*" v-model="phone" name="phone" type="text" maxlength="12" minlength="7" v-validate="'required|numeric|min:7|max:12'">
+                                <input @keyup="validPhone()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Teléfono*" v-model="phone" name="phone" type="text" maxlength="12" minlength="7" v-validate="'required|numeric|min:7|max:12'">
                                 <span class="text-danger">{{ errors_phone }}</span>
                             </div>    
                         </div>      
@@ -116,7 +116,7 @@
             },
             methods: {
                 validName() {
-                    var re = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}/
+                    var re = /^[a-zA-Z]{3,}/
                     if(!re.test(this.name)){        
                         this.errors_name ='Ingresa tu nombre'
                     }
@@ -139,36 +139,38 @@
                         this.errors_phone = ''
                     }
                 },
-                findEmail() {
+                validEmail() {
                     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     if(!re.test(this.email)){
                         this.errors_email = 'Ingresa un correo válido'
                     }
                     else{
                         this.errors_email = ''
-                        if(this.email != '' && this.email != undefined) {
-                            this.bandera = 1;
-                            axios.get('leads/'+this.email).then(
-                                (response) => {
-                                    if (!response.data.status) {         
-                                        this.$swal({
-                                            title: 'Lo sentimos',
-                                            text: "El correo "+this.email+" ha sido utilizado previamente, para continuar ingresa otro correo.",
-                                            type: 'info',
-                                            showCancelButton: false,
-                                            confirmButtonColor: '#3085d6',
-                                            confirmButtonText: 'Aceptar'
-                                        }).then((result) => {
-                                            if (result.value) {
-                                                this.bandera = 2
-                                                this.email = '';
-                                            }
-                                        }) 
-                                    }else{ this.bandera = 2; }
-                                }
-                            )   
-                        }    
                     }
+                },
+                findEmail() {
+                    if(this.email != '' && this.email != undefined) {
+                        this.bandera = 1;
+                        axios.get('leads/'+this.email).then(
+                            (response) => {
+                                if (!response.data.status) {         
+                                    this.$swal({
+                                        title: 'Lo sentimos',
+                                        text: "El correo "+this.email+" ha sido utilizado previamente, para continuar ingresa otro correo.",
+                                        type: 'info',
+                                        showCancelButton: false,
+                                        confirmButtonColor: '#3085d6',
+                                        confirmButtonText: 'Aceptar'
+                                    }).then((result) => {
+                                        if (result.value) {
+                                            this.bandera = 2
+                                            this.email = '';
+                                        }
+                                    }) 
+                                }else{ this.bandera = 2; }
+                            }
+                        )   
+                    }  
                     
                 },
                 findPromo(){

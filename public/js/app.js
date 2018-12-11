@@ -82013,7 +82013,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
     },
     methods: {
         validName: function validName() {
-            var re = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}/;
+            var re = /^[a-zA-Z]{3,}/;
             if (!re.test(this.name)) {
                 this.errors_name = 'Ingresa tu nombre';
             } else {
@@ -82032,36 +82032,38 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
                 this.errors_phone = '';
             }
         },
-        findEmail: function findEmail() {
-            var _this = this;
-
+        validEmail: function validEmail() {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (!re.test(this.email)) {
                 this.errors_email = 'Ingresa un correo válido';
             } else {
                 this.errors_email = '';
-                if (this.email != '' && this.email != undefined) {
-                    this.bandera = 1;
-                    axios.get('leads/' + this.email).then(function (response) {
-                        if (!response.data.status) {
-                            _this.$swal({
-                                title: 'Lo sentimos',
-                                text: "El correo " + _this.email + " ha sido utilizado previamente, para continuar ingresa otro correo.",
-                                type: 'info',
-                                showCancelButton: false,
-                                confirmButtonColor: '#3085d6',
-                                confirmButtonText: 'Aceptar'
-                            }).then(function (result) {
-                                if (result.value) {
-                                    _this.bandera = 2;
-                                    _this.email = '';
-                                }
-                            });
-                        } else {
-                            _this.bandera = 2;
-                        }
-                    });
-                }
+            }
+        },
+        findEmail: function findEmail() {
+            var _this = this;
+
+            if (this.email != '' && this.email != undefined) {
+                this.bandera = 1;
+                axios.get('leads/' + this.email).then(function (response) {
+                    if (!response.data.status) {
+                        _this.$swal({
+                            title: 'Lo sentimos',
+                            text: "El correo " + _this.email + " ha sido utilizado previamente, para continuar ingresa otro correo.",
+                            type: 'info',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'Aceptar'
+                        }).then(function (result) {
+                            if (result.value) {
+                                _this.bandera = 2;
+                                _this.email = '';
+                            }
+                        });
+                    } else {
+                        _this.bandera = 2;
+                    }
+                });
             }
         },
         findPromo: function findPromo() {
@@ -82244,7 +82246,7 @@ var render = function() {
                   },
                   domProps: { value: _vm.name },
                   on: {
-                    blur: function($event) {
+                    keyup: function($event) {
                       _vm.validName()
                     },
                     input: function($event) {
@@ -82290,6 +82292,7 @@ var render = function() {
                       },
                       domProps: { value: _vm.email },
                       on: {
+                        keyup: _vm.validEmail,
                         blur: function($event) {
                           _vm.findEmail()
                         },
@@ -82337,7 +82340,7 @@ var render = function() {
                       },
                       domProps: { value: _vm.phone },
                       on: {
-                        blur: function($event) {
+                        keyup: function($event) {
                           _vm.validPhone()
                         },
                         input: function($event) {
