@@ -85,6 +85,7 @@
         import VModal from 'vue-js-modal' 
         Vue.use(VModal)
         // Vue.use(VeeValidate);
+        
 
         export default {
             // props : ['lead'],
@@ -105,6 +106,7 @@
                     promo_convenio : undefined,
                 }
             },
+            
             //Método para habilitar/deshabilitar botón Siguiente hasta completar todos los campos
             computed: {
                 isDisabled: function(){ 
@@ -115,32 +117,46 @@
                 validName() {
                     var re = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}/
                     if(!re.test(this.name)){        
-                        // errors.name.push('Es requerido un nombre y apellido');
+                        errors.name.push('Es requerido un nombre y apellido');
                     }
                 },
+                // validEmail() {
+                //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                //    // return re.test(email);
+                //     if(!re.test(this.email)){
+                //         errors.email.push('Ingresa un correo válido')
+                //     }
+                // },
                 findEmail() {
-                    if(this.email != '' && this.email != undefined) {
-                        this.bandera = 1;
-                        axios.get('leads/'+this.email).then(
-                            (response) => {
-                                if (!response.data.status) {         
-                                    this.$swal({
-                                        title: 'Lo sentimos',
-                                        text: "El correo "+this.email+" ha sido utilizado previamente, para continuar ingresa otro correo.",
-                                        type: 'info',
-                                        showCancelButton: false,
-                                        confirmButtonColor: '#3085d6',
-                                        confirmButtonText: 'Aceptar'
-                                    }).then((result) => {
-                                        if (result.value) {
-                                            this.bandera = 2
-                                            this.email = '';
-                                        }
-                                    }) 
-                                }else{ this.bandera = 2; }
-                            }
-                        )   
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    if(!re.test(this.email)){
+                        errors.email.push('Ingresa un correo válido')
                     }
+                    else{
+                        if(this.email != '' && this.email != undefined) {
+                            this.bandera = 1;
+                            axios.get('leads/'+this.email).then(
+                                (response) => {
+                                    if (!response.data.status) {         
+                                        this.$swal({
+                                            title: 'Lo sentimos',
+                                            text: "El correo "+this.email+" ha sido utilizado previamente, para continuar ingresa otro correo.",
+                                            type: 'info',
+                                            showCancelButton: false,
+                                            confirmButtonColor: '#3085d6',
+                                            confirmButtonText: 'Aceptar'
+                                        }).then((result) => {
+                                            if (result.value) {
+                                                this.bandera = 2
+                                                this.email = '';
+                                            }
+                                        }) 
+                                    }else{ this.bandera = 2; }
+                                }
+                            )   
+                        }    
+                    }
+                    
                 },
                 findPromo(){
                     if(this.code_promo != '' && this.code_promo != undefined)
