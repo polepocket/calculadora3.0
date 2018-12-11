@@ -84093,7 +84093,7 @@ var render = function() {
         _c("div", { staticClass: "div-sol" }, [
           _c("img", {
             staticClass: "p-4 show_movil",
-            attrs: { src: "img/logo_header.png", width: "60" }
+            attrs: { src: "img/logo_header.png", width: "100" }
           }),
           _vm._v(" "),
           _c("h2", { staticClass: "col-blue-enlight bold p-3 pt-4 ahorro" }, [
