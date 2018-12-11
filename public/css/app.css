@@ -10555,11 +10555,6 @@ p {
   width: 100%;
 }
 
-.img-responsive {
-  max-width: 100%;
-  height: auto;
-}
-
 /* ESTILOS PARA ESCRITORIO */
 
 @media screen and (min-width: 767px) {
@@ -10769,7 +10764,7 @@ h2.modal-title {
 
 @media screen and (max-width: 767px) {
   p.big {
-    font-size: 1rem !important;
+    font-size: .9rem !important;
     padding: 0 4vw 0 4vw;
   }
 
