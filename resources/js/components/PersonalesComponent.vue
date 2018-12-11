@@ -21,24 +21,15 @@
                     <div class="col-md-6">
                         <h4>Proporciona tus datos para ver tu solución:</h4>  
                         <input type="text" @blur="validName()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus()}" placeholder="Nombre completo*" v-model="name" name="name" v-validate="'required'">
-                        <span class="text-danger">{{ errors.first('name') }}</span>
-                        <ul>
-                            <li class="text-danger" v-for="error in errors_name">{{error}}</li>
-                        </ul>
+                        <span class="text-danger">{{ errors_name }}</span>
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="email" @blur="findEmail()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Email*" name="email" v-model="email" v-validate="'required|email'" data-vv-as="email">
-                                <span class="text-danger">{{ errors.first('email') }}</span>
-                                <ul>
-                                    <li class="text-danger" v-for="error in errors_email">{{error}}</li>
-                                </ul>
+                                <span class="text-danger">{{ errors_email }}</span>
                             </div>
                             <div class="col-md-6">
-                                <input v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Teléfono*" v-model="phone" name="phone" type="text" v-validate="'required|numeric|min:7|max:12'">
-                                <span class="text-danger">{{ errors.first('phone') }}</span>
-                                <ul>
-                                    <li class="text-danger" v-for="error in errors_email">{{error}}</li>
-                                </ul>
+                                <input @blur="validPhone()" v-bind:class="{'form-control':true, 'focus-ini':inicio_focus(), 'col-auto': true }" placeholder="Teléfono*" v-model="phone" name="phone" type="text" maxlength="12" minlength="7" v-validate="'required|numeric|min:7|max:12'">
+                                <span class="text-danger">{{ errors_phone }}</span>
                             </div>    
                         </div>      
                     </div>
@@ -108,8 +99,8 @@
                     name : undefined,
                     email : undefined,
                     phone : undefined,
-                    errors_name : [],
-                    errors_email : [],
+                    errors_name : '',
+                    errors_email : '',
                     code_promo : undefined,
                     bandera : 0,
                     contacto_refiere : undefined,
@@ -127,26 +118,34 @@
                 validName() {
                     var re = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}/
                     if(!re.test(this.name)){        
-                        this.errors_name.push('Es requerido un nombre y apellido');
+                        this.errors_name ='Ingresa tu nombre'
                     }
                     else{
-                        this.errors_email = []
+                        this.errors_name = ''
                     }
                 },
-                // validEmail() {
-                //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                //    // return re.test(email);
-                //     if(!re.test(this.email)){
-                //         errors.email.push('Ingresa un correo válido')
-                //     }
-                // },
+                validPhone() {
+                    var re = /^\d/
+                    var min = 7
+                    var max = 12
+                    if(!re.test(this.phone)){        
+                        this.errors_phone ='Ingresa sólo números'
+                    }
+                    else if(this.phone.length < min || this.phone.length > max)
+                    {
+                        this.errors_phone ='Ingresa un número válido'
+                    }
+                    else{
+                        this.errors_phone = ''
+                    }
+                },
                 findEmail() {
                     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     if(!re.test(this.email)){
-                        this.errors_email.push('Ingresa un correo válido')
+                        this.errors_email = 'Ingresa un correo válido'
                     }
                     else{
-                        this.errors_email = []
+                        this.errors_email = ''
                         if(this.email != '' && this.email != undefined) {
                             this.bandera = 1;
                             axios.get('leads/'+this.email).then(
