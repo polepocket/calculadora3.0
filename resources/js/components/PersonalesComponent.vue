@@ -85,7 +85,6 @@
         import VModal from 'vue-js-modal' 
         Vue.use(VModal)
         // Vue.use(VeeValidate);
-        
 
         export default {
             // props : ['lead'],
@@ -300,9 +299,9 @@
                 history.pushState(null, null, null); // creates new history entry with same URL
                 addEventListener('popstate', function() {
                     Swal({
-                        title: 'Felicidades',
+                        title: 'Aviso',
                         text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                        type: 'info',
+                        type: 'warning',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'Aceptar'
