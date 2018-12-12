@@ -1,9 +1,11 @@
 require('./bootstrap');
 require('./enlight');
-require('es6-promise').polyfill();
+// require('es6-promise').polyfill();
 window.Vue = require('vue');
  
 // or import all icons if you don't care about bundle size
+import Es6Promise from 'es6-promise'
+Es6Promise.polyfill()
 import 'vue-awesome/icons'
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
