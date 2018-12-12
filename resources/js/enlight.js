@@ -14,3 +14,8 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
 	event.preventDefault();
 	}
 });
+
+if(history.forward(1)){
+	console.log('Clic al botón Back');
+	location.replace( history.forward(1) );
+}
