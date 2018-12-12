@@ -79505,6 +79505,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 });
+console.log(this.fin);
 
 /***/ }),
 /* 1456 */
@@ -84076,7 +84077,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default.a);
             this.$emit('asesor');
         }
     }
-
     // if (window.history && history.pushState) {
     //     addEventListener('load', function(event) {
     //         history.pushState(null, null, null); // creates new history entry with same URL
