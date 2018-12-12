@@ -35987,7 +35987,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
   el: '#app'
 });
 
-app.backBrowser1();
+// app.backBrowser1();
 
 /***/ }),
 /* 31 */
@@ -83229,6 +83229,37 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
     computed: {
         isDisabled: function isDisabled() {
             return !this.name || !this.email || !this.phone || this.errors.items.length > 0;
+        },
+        backBrowser1: function backBrowser1() {
+            if (window.history && history.pushState) {
+                addEventListener('load', function (event) {
+                    history.pushState(null, null, null); // creates new history entry with same URL
+                    event.preventDefault();
+                    addEventListener('popstate', function () {
+                        Swal({
+                            title: 'Aviso',
+                            text: "Si sales perderás tus cambios ¿Deseas regresar?",
+                            type: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'Aceptar'
+                        }).then(function (result) {
+                            if (result.value) {
+                                location.reload();
+                            } else {
+                                history.pushState(null, null, null);
+                            }
+                        });
+                        // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
+                        // if (!stayOnPage) {
+                        //     history.pushState(null, null, null);
+                        // } else {
+                        //     // history.back() 
+                        //     location.reload();
+                        // }
+                    });
+                });
+            }
         }
     },
     methods: {
@@ -83394,37 +83425,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
         },
         back1: function back1() {
             this.$emit('back1');
-        },
-        backBrowser1: function backBrowser1() {
-            if (window.history && history.pushState) {
-                addEventListener('load', function (event) {
-                    history.pushState(null, null, null); // creates new history entry with same URL
-                    event.preventDefault();
-                    addEventListener('popstate', function () {
-                        Swal({
-                            title: 'Aviso',
-                            text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                            type: 'warning',
-                            showCancelButton: true,
-                            confirmButtonColor: '#3085d6',
-                            confirmButtonText: 'Aceptar'
-                        }).then(function (result) {
-                            if (result.value) {
-                                location.reload();
-                            } else {
-                                history.pushState(null, null, null);
-                            }
-                        });
-                        // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
-                        // if (!stayOnPage) {
-                        //     history.pushState(null, null, null);
-                        // } else {
-                        //     // history.back() 
-                        //     location.reload();
-                        // }
-                    });
-                });
-            }
         }
     }
 });

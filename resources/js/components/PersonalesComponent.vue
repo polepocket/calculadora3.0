@@ -112,6 +112,37 @@
                 isDisabled: function(){ 
                     return (!this.name || !this.email || !this.phone || this.errors.items.length > 0);
                 },
+                backBrowser1: function(){
+                    if (window.history && history.pushState) {
+                        addEventListener('load', function(event) {
+                            history.pushState(null, null, null); // creates new history entry with same URL
+                            event.preventDefault();
+                            addEventListener('popstate', function() {
+                                Swal({
+                                    title: 'Aviso',
+                                    text: "Si sales perderás tus cambios ¿Deseas regresar?",
+                                    type: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    confirmButtonText: 'Aceptar'
+                                }).then((result) => {
+                                    if (result.value) {
+                                        location.reload();
+                                    }else{
+                                        history.pushState(null, null, null);
+                                    }
+                                }) 
+                                // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
+                                // if (!stayOnPage) {
+                                //     history.pushState(null, null, null);
+                                // } else {
+                                //     // history.back() 
+                                //     location.reload();
+                                // }
+                            });    
+                        });
+                    }                 
+                }
             },
             methods: {
                 validName() {
@@ -290,37 +321,7 @@
                 back1(){
                     this.$emit('back1');
                 },
-                backBrowser1(){
-                    if (window.history && history.pushState) {
-                        addEventListener('load', function(event) {
-                            history.pushState(null, null, null); // creates new history entry with same URL
-                            event.preventDefault();
-                            addEventListener('popstate', function() {
-                                Swal({
-                                    title: 'Aviso',
-                                    text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                                    type: 'warning',
-                                    showCancelButton: true,
-                                    confirmButtonColor: '#3085d6',
-                                    confirmButtonText: 'Aceptar'
-                                }).then((result) => {
-                                    if (result.value) {
-                                        location.reload();
-                                    }else{
-                                        history.pushState(null, null, null);
-                                    }
-                                }) 
-                                // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
-                                // if (!stayOnPage) {
-                                //     history.pushState(null, null, null);
-                                // } else {
-                                //     // history.back() 
-                                //     location.reload();
-                                // }
-                            });    
-                        });
-                    }                 
-                }
+                
             }
         }
     </script>

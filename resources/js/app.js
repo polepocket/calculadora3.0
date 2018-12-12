@@ -39,4 +39,4 @@ const app = new Vue({
     el: '#app'
 });
 
-app.backBrowser1();
+// app.backBrowser1();
