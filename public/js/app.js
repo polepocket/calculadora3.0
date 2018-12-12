@@ -84066,29 +84066,30 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default.a);
             this.$emit('asesor');
         }
     }
-});
 
-if (window.history && history.pushState) {
-    addEventListener('load', function (event) {
-        history.pushState(null, null, null); // creates new history entry with same URL
-        addEventListener('popstate', function () {
-            Swal({
-                title: 'Aviso',
-                text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'Aceptar'
-            }).then(function (result) {
-                if (result.value) {
-                    location.reload();
-                } else {
-                    history.pushState(null, null, null);
-                }
-            });
-        });
-    });
-}
+    // if (window.history && history.pushState) {
+    //     addEventListener('load', function(event) {
+    //         history.pushState(null, null, null); // creates new history entry with same URL
+    //         addEventListener('popstate', function() {
+    //             Swal({
+    //                 title: 'Aviso',
+    //                 text: "Si sales perderás tus cambios ¿Deseas regresar?",
+    //                 type: 'warning',
+    //                 showCancelButton: true,
+    //                 confirmButtonColor: '#3085d6',
+    //                 confirmButtonText: 'Aceptar'
+    //             }).then((result) => {
+    //                 if (result.value) {
+    //                     location.reload();
+    //                 }else{
+    //                     history.pushState(null, null, null);
+    //                 }
+    //             }) 
+    //         });    
+    //     });
+    // }  
+
+});
 
 /***/ }),
 /* 1501 */
@@ -84708,29 +84709,30 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
             this.$emit('back2');
         }
     }
-});
 
-if (window.history && history.pushState) {
-    addEventListener('load', function () {
-        history.pushState(null, null, null); // creates new history entry with same URL
-        addEventListener('popstate', function () {
-            Swal({
-                title: 'Aviso',
-                text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'Aceptar'
-            }).then(function (result) {
-                if (result.value) {
-                    location.reload();
-                } else {
-                    history.pushState(null, null, null);
-                }
-            });
-        });
-    });
-}
+    // if (window.history && history.pushState) {
+    //     addEventListener('load', function() {
+    //         history.pushState(null, null, null); // creates new history entry with same URL
+    //         addEventListener('popstate', function() {
+    //             Swal({
+    //                 title: 'Aviso',
+    //                 text: "Si sales perderás tus cambios ¿Deseas regresar?",
+    //                 type: 'warning',
+    //                 showCancelButton: true,
+    //                 confirmButtonColor: '#3085d6',
+    //                 confirmButtonText: 'Aceptar'
+    //             }).then((result) => {
+    //                 if (result.value) {
+    //                     location.reload();
+    //                 }else{
+    //                     history.pushState(null, null, null);
+    //                 }
+    //             }) 
+    //         });    
+    //     });
+    // }  
+
+});
 
 /***/ }),
 /* 1504 */
@@ -85055,28 +85057,29 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
             this.$emit('enviarCorreo');
         }
     }
+    // if (window.history && history.pushState) {
+    //     addEventListener('load', function() {
+    //         history.pushState(null, null, null); // creates new history entry with same URL
+    //         addEventListener('popstate', function() {
+    //             Swal({
+    //                 title: 'Aviso',
+    //                 text: "Si sales perderás tus cambios ¿Deseas regresar?",
+    //                 type: 'warning',
+    //                 showCancelButton: true,
+    //                 confirmButtonColor: '#3085d6',
+    //                 confirmButtonText: 'Aceptar'
+    //             }).then((result) => {
+    //                 if (result.value) {
+    //                     location.reload();
+    //                 }else{
+    //                     history.pushState(null, null, null);
+    //                 }
+    //             }) 
+    //         });    
+    //     });
+    // }      
+
 });
-if (window.history && history.pushState) {
-    addEventListener('load', function () {
-        history.pushState(null, null, null); // creates new history entry with same URL
-        addEventListener('popstate', function () {
-            Swal({
-                title: 'Aviso',
-                text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'Aceptar'
-            }).then(function (result) {
-                if (result.value) {
-                    location.reload();
-                } else {
-                    history.pushState(null, null, null);
-                }
-            });
-        });
-    });
-}
 
 /***/ }),
 /* 1507 */
@@ -85544,14 +85547,14 @@ new Vue({
     }
 });
 
-if (window.history && history.pushState) {
-    addEventListener('load', function () {
-        history.pushState(null, null, null); // creates new history entry with same URL
-        addEventListener('popstate', function () {
-            location.reload();
-        });
-    });
-}
+// if (window.history && history.pushState) {
+//     addEventListener('load', function() {
+//         history.pushState(null, null, null); // creates new history entry with same URL
+//         addEventListener('popstate', function() {
+//             location.reload();
+//         });    
+//     });
+// }
 
 /***/ }),
 /* 1513 */
