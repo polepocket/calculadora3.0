@@ -1,3 +1,5 @@
+import Es6Promise from 'es6-promise'
+Es6Promise.polyfill() 
 require('./bootstrap');
 require('./enlight');
 // require('es6-promise').polyfill();
@@ -7,8 +9,6 @@ window.Vue = require('vue');
 import 'vue-awesome/icons'
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
-import Es6Promise from 'es6-promise'
-Es6Promise.polyfill() 
 // Vue.use(VeeValidate);
 /* Register component with one of 2 methods */
 
