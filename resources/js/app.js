@@ -13,9 +13,10 @@ import VeeValidate from 'vee-validate';
 // Vue.use(VeeValidate);
 /* Register component with one of 2 methods */
 
-import Icon from 'vue-awesome/components/Icon'
-Vue.component('v-icon', Icon)
+import Icon from 'vue-awesome/components/Icon';
 
+var final = false;
+Vue.component('v-icon', Icon);
 Vue.component('padre-component', require('./components/PadreComponent.vue'));
 Vue.component('dimension-component', require('./components/DimensionComponent.vue'));
 Vue.component('personales-component', require('./components/PersonalesComponent.vue'));

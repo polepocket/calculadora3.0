@@ -35962,8 +35962,9 @@ window.Vue = __webpack_require__(22);
 /* Register component with one of 2 methods */
 
 
-__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('v-icon', __WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon___default.a);
 
+var final = false;
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('v-icon', __WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon___default.a);
 __WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('padre-component', __webpack_require__(1454));
 __WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('dimension-component', __webpack_require__(1457));
 __WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('personales-component', __webpack_require__(1496));
@@ -79398,7 +79399,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var final = undefined;
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
