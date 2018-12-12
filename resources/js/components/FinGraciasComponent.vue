@@ -25,6 +25,7 @@
 </template>
 
     <script>
+        var final = undefined;
         new Vue({
             el: '#menu',
             data: {
@@ -42,7 +43,9 @@
 
             },
             mounted() {
-                console.log(this.lead)
+                final = true;
+                // console.log(this.lead)
+
             }
         }
         

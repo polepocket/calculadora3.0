@@ -39,4 +39,37 @@ const app = new Vue({
     el: '#app'
 });
 
-// app.backBrowser1();
+if (window.history && history.pushState && !fin) {
+  addEventListener('load', function(event) {
+      history.pushState(null, null, null); // creates new history entry with same URL
+      event.preventDefault();
+      addEventListener('popstate', function() {
+          if(final){
+              location.reload();
+          }else{
+              Swal({
+                  title: 'Aviso',
+                  text: "Si sales perderás tus cambios ¿Deseas regresar?",
+                  type: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'Aceptar'
+              }).then((result) => {
+                  if (result.value) {
+                      location.reload();
+                  }else{
+                      history.pushState(null, null, null);
+                  }
+              }) 
+              // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
+              // if (!stayOnPage) {
+              //     history.pushState(null, null, null);
+              // } else {
+              //     // history.back() 
+              //     location.reload();
+              // }    
+          }
+          
+      });    
+  });
+}        

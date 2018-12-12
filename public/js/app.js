@@ -35975,19 +35975,51 @@ __WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('fin-component', __webpack
 
 // or locally (in your component file)
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    'v-icon': __WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon___default.a,
-    'VeeValidate': __WEBPACK_IMPORTED_MODULE_3_vee_validate__["a" /* default */]
-    // 'vueSlider': vueSlider,
-    // 'Vmodal': VModal
-  }
+    components: {
+        'v-icon': __WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon___default.a,
+        'VeeValidate': __WEBPACK_IMPORTED_MODULE_3_vee_validate__["a" /* default */]
+        // 'vueSlider': vueSlider,
+        // 'Vmodal': VModal
+    }
 });
 
 var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
-  el: '#app'
+    el: '#app'
 });
 
-// app.backBrowser1();
+if (window.history && history.pushState && !fin) {
+    addEventListener('load', function (event) {
+        history.pushState(null, null, null); // creates new history entry with same URL
+        event.preventDefault();
+        addEventListener('popstate', function () {
+            if (final) {
+                location.reload();
+            } else {
+                Swal({
+                    title: 'Aviso',
+                    text: "Si sales perderás tus cambios ¿Deseas regresar?",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Aceptar'
+                }).then(function (result) {
+                    if (result.value) {
+                        location.reload();
+                    } else {
+                        history.pushState(null, null, null);
+                    }
+                });
+                // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
+                // if (!stayOnPage) {
+                //     history.pushState(null, null, null);
+                // } else {
+                //     // history.back() 
+                //     location.reload();
+                // }    
+            }
+        });
+    });
+}
 
 /***/ }),
 /* 31 */
@@ -83202,7 +83234,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_sweetalert2__["a" /* default */]);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
 // Vue.use(VeeValidate);
-
 /* harmony default export */ __webpack_exports__["default"] = ({
     // props : ['lead'],
     components: {
@@ -83229,40 +83260,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
     computed: {
         isDisabled: function isDisabled() {
             return !this.name || !this.email || !this.phone || this.errors.items.length > 0;
-        },
-        backBrowser1: function backBrowser1() {
-            if (window.history && history.pushState) {
-                console.log('Se hizo clic en el botón BackBrowser');
-                addEventListener('load', function (event) {
-                    console.log('Entró al evento addEventListener');
-                    history.pushState(null, null, null); // creates new history entry with same URL
-                    // event.preventDefault();
-                    addEventListener('popstate', function () {
-                        console.log('Entró al evento addEventListener 2');
-                        this.$swal({
-                            title: 'Aviso',
-                            text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                            type: 'warning',
-                            showCancelButton: true,
-                            confirmButtonColor: '#3085d6',
-                            confirmButtonText: 'Aceptar'
-                        }).then(function (result) {
-                            if (result.value) {
-                                location.reload();
-                            } else {
-                                history.pushState(null, null, null);
-                            }
-                        });
-                        // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
-                        // if (!stayOnPage) {
-                        //     history.pushState(null, null, null);
-                        // } else {
-                        //     // history.back() 
-                        //     location.reload();
-                        // }
-                    });
-                });
-            }
         }
     },
     methods: {
@@ -83428,9 +83425,44 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
         },
         back1: function back1() {
             this.$emit('back1');
-        }
+        },
+        backBrowser1: function backBrowser1() {}
     }
 });
+
+if (window.history && history.pushState && !fin) {
+    addEventListener('load', function (event) {
+        history.pushState(null, null, null); // creates new history entry with same URL
+        event.preventDefault();
+        addEventListener('popstate', function () {
+            if (fin) {
+                location.reload();
+            } else {
+                Swal({
+                    title: 'Aviso',
+                    text: "Si sales perderás tus cambios ¿Deseas regresar?",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Aceptar'
+                }).then(function (result) {
+                    if (result.value) {
+                        location.reload();
+                    } else {
+                        history.pushState(null, null, null);
+                    }
+                });
+                // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
+                // if (!stayOnPage) {
+                //     history.pushState(null, null, null);
+                // } else {
+                //     // history.back() 
+                //     location.reload();
+                // }    
+            }
+        });
+    });
+}
 
 /***/ }),
 /* 1498 */
@@ -85533,6 +85565,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+var final = undefined;
 new Vue({
     el: '#menu',
     data: {
@@ -85549,7 +85582,8 @@ new Vue({
         };
     },
     mounted: function mounted() {
-        console.log(this.lead);
+        final = true;
+        // console.log(this.lead)
     }
 });
 
