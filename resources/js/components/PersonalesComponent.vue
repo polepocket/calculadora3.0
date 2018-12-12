@@ -56,7 +56,7 @@
         <modal name="modal-code"
             :adaptive="true"
             :max-width="600"
-            :max-height="600"
+            :max-height="500"
             width="85%"
             height="85%">
             <div style="text-align: center">
@@ -293,6 +293,22 @@
                     this.$emit('back1');
                 }
             }
+        }
+        
+        if (window.history && history.pushState) {
+            console.log('Hizo clic en back');
+            addEventListener('load', function() {
+                history.pushState(null, null, null); // creates new history entry with same URL
+                addEventListener('popstate', function() {
+                    var stayOnPage = confirm("Usted perderá sus cambios ¿Desea salir de la calculadora?");
+                    if (!stayOnPage) {
+                        history.pushState(null, null, null);
+                    } else {
+                        // history.back() 
+                        window.location.replace('/');
+                    }
+                });    
+            });
         }
     </script>
     

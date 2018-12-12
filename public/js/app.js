@@ -59224,35 +59224,20 @@ module.exports = function spread(callback) {
 
 //Método para evitar ahacer zoom a la página
 $(document).keydown(function (event) {
-    if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
-        event.preventDefault();
-    }
-    // 107 Num Key  +
-    // 109 Num Key  -
-    // 173 Min Key  hyphen/underscor Hey
-    // 61 Plus key  +/= key
+	if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
+		event.preventDefault();
+	}
+	// 107 Num Key  +
+	// 109 Num Key  -
+	// 173 Min Key  hyphen/underscor Hey
+	// 61 Plus key  +/= key
 });
 //Método para evitar ahacer zoom a la página
 $(window).bind('mousewheel DOMMouseScroll', function (event) {
-    if (event.ctrlKey == true) {
-        event.preventDefault();
-    }
+	if (event.ctrlKey == true) {
+		event.preventDefault();
+	}
 });
-
-if (window.history && history.pushState) {
-    console.log('Hizo clic en back');
-    addEventListener('load', function () {
-        history.pushState(null, null, null); // creates new history entry with same URL
-        addEventListener('popstate', function () {
-            var stayOnPage = confirm("Would you like to save this draft?");
-            if (!stayOnPage) {
-                history.back();
-            } else {
-                history.pushState(null, null, null);
-            }
-        });
-    });
-}
 
 /***/ }),
 /* 56 */
@@ -83412,6 +83397,22 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
     }
 });
 
+if (window.history && history.pushState) {
+    console.log('Hizo clic en back');
+    addEventListener('load', function () {
+        history.pushState(null, null, null); // creates new history entry with same URL
+        addEventListener('popstate', function () {
+            var stayOnPage = confirm("Usted perderá sus cambios ¿Desea salir de la calculadora?");
+            if (!stayOnPage) {
+                history.pushState(null, null, null);
+            } else {
+                // history.back() 
+                window.location.replace('/');
+            }
+        });
+    });
+}
+
 /***/ }),
 /* 1498 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -83680,7 +83681,7 @@ var render = function() {
             name: "modal-code",
             adaptive: true,
             "max-width": 600,
-            "max-height": 600,
+            "max-height": 500,
             width: "85%",
             height: "85%"
           }

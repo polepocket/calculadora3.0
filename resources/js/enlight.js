@@ -14,18 +14,3 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
 	event.preventDefault();
 	}
 });
-
-if (window.history && history.pushState) {
-	console.log('Hizo clic en back');
-    addEventListener('load', function() {
-        history.pushState(null, null, null); // creates new history entry with same URL
-        addEventListener('popstate', function() {
-            var stayOnPage = confirm("Would you like to save this draft?");
-            if (!stayOnPage) {
-                history.back() 
-            } else {
-                history.pushState(null, null, null);
-            }
-        });    
-    });
-}
