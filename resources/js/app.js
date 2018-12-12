@@ -1,7 +1,6 @@
 import Es6Promise from 'es6-promise'
 Es6Promise.polyfill() 
 
-require('sweetalert2')
 require('./bootstrap');
 require('./enlight');
 // require('es6-promise').polyfill();
