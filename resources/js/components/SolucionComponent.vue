@@ -172,7 +172,6 @@
                 }
             },
             mounted() {
-                final = false;
                 this.data.consumption = this.consumption
                 this.data.lead_id = this.lead_id
                 this.data.mty = this.mty

@@ -76,9 +76,7 @@
                 recibo : false
             }
         },
-        
         mounted() {
-            final = false;
         },
         components: {
             VeeValidate

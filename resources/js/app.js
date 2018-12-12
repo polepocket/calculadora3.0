@@ -15,7 +15,6 @@ import VeeValidate from 'vee-validate';
 
 import Icon from 'vue-awesome/components/Icon';
 
-var final = false;
 Vue.component('v-icon', Icon);
 Vue.component('padre-component', require('./components/PadreComponent.vue'));
 Vue.component('dimension-component', require('./components/DimensionComponent.vue'));
@@ -38,39 +37,4 @@ export default {
 
 const app = new Vue({
     el: '#app'
-});
-
-if (window.history && history.pushState) {
-  addEventListener('load', function(event) {
-      history.pushState(null, null, null); // creates new history entry with same URL
-      event.preventDefault();
-      addEventListener('popstate', function() {
-          if(final){
-              location.reload();
-          }else{
-              Swal({
-                  title: 'Aviso',
-                  text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                  type: 'warning',
-                  showCancelButton: true,
-                  confirmButtonColor: '#3085d6',
-                  confirmButtonText: 'Aceptar'
-              }).then((result) => {
-                  if (result.value) {
-                      location.reload();
-                  }else{
-                      history.pushState(null, null, null);
-                  }
-              }) 
-              // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
-              // if (!stayOnPage) {
-              //     history.pushState(null, null, null);
-              // } else {
-              //     // history.back() 
-              //     location.reload();
-              // }    
-          }
-          
-      });    
-  });
-}        
+});    

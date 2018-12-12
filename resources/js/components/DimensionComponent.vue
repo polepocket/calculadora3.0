@@ -94,7 +94,6 @@
             VModal
         },
         mounted() {
-            final = false;
         },
         plugins: [
             '~/plugins/vue2-filters'

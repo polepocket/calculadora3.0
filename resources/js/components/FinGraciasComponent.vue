@@ -42,7 +42,6 @@
 
             },
             mounted() {
-                final = true;
                 // console.log(this.lead)
 
             }

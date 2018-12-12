@@ -91,7 +91,6 @@
                 VModal
             },
             mounted() {
-                final = false;
             },
             data(){
                 return {
