@@ -38,3 +38,5 @@ export default {
 const app = new Vue({
     el: '#app'
 });
+
+app.backBrowser1();
