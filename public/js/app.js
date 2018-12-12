@@ -83404,7 +83404,7 @@ if (window.history && history.pushState) {
                 title: 'Aviso',
                 text: "Si sales perderás tus cambios ¿Deseas regresar?",
                 type: 'warning',
-                showCancelButton: false,
+                showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'Aceptar'
             }).then(function (result) {
