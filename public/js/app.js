@@ -83232,11 +83232,14 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
         },
         backBrowser1: function backBrowser1() {
             if (window.history && history.pushState) {
+                console.log('Se hizo clic en el botón BackBrowser');
                 addEventListener('load', function (event) {
+                    console.log('Entró al evento addEventListener');
                     history.pushState(null, null, null); // creates new history entry with same URL
                     // event.preventDefault();
                     addEventListener('popstate', function () {
-                        Swal({
+                        console.log('Entró al evento addEventListener 2');
+                        this.$swal({
                             title: 'Aviso',
                             text: "Si sales perderás tus cambios ¿Deseas regresar?",
                             type: 'warning',
