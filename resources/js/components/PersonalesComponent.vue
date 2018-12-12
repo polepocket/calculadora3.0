@@ -116,7 +116,7 @@
                     if (window.history && history.pushState) {
                         addEventListener('load', function(event) {
                             history.pushState(null, null, null); // creates new history entry with same URL
-                            event.preventDefault();
+                            // event.preventDefault();
                             addEventListener('popstate', function() {
                                 Swal({
                                     title: 'Aviso',

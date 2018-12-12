@@ -83234,7 +83234,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
             if (window.history && history.pushState) {
                 addEventListener('load', function (event) {
                     history.pushState(null, null, null); // creates new history entry with same URL
-                    event.preventDefault();
+                    // event.preventDefault();
                     addEventListener('popstate', function () {
                         Swal({
                             title: 'Aviso',
