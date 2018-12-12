@@ -108,7 +108,25 @@
                     promo_convenio : undefined,
                 }
             },
-            
+            watch: {
+                function (){
+                    if (window.history && history.pushState) {
+                        console.log('Hizo clic en back');
+                        addEventListener('load', function() {
+                            history.pushState(null, null, null); // creates new history entry with same URL
+                            addEventListener('popstate', function() {
+                                var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
+                                if (!stayOnPage) {
+                                    history.pushState(null, null, null);
+                                } else {
+                                    // history.back() 
+                                    location.reload();
+                                }
+                            });    
+                        });
+                    }            
+                }
+            },
             //Método para habilitar/deshabilitar botón Siguiente hasta completar todos los campos
             computed: {
                 isDisabled: function(){ 
@@ -291,24 +309,11 @@
                 },
                 back1(){
                     this.$emit('back1');
-                }
+                },
+                
             }
         }
         
-        if (window.history && history.pushState) {
-            console.log('Hizo clic en back');
-            addEventListener('load', function() {
-                history.pushState(null, null, null); // creates new history entry with same URL
-                addEventListener('popstate', function() {
-                    var stayOnPage = confirm("Usted perderá sus cambios ¿Desea salir de la calculadora?");
-                    if (!stayOnPage) {
-                        history.pushState(null, null, null);
-                    } else {
-                        // history.back() 
-                        window.location.replace('/');
-                    }
-                });    
-            });
-        }
+        
     </script>
     

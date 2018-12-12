@@ -83223,7 +83223,25 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
         };
     },
 
-
+    watch: {
+        function: function _function() {
+            if (window.history && history.pushState) {
+                console.log('Hizo clic en back');
+                addEventListener('load', function () {
+                    history.pushState(null, null, null); // creates new history entry with same URL
+                    addEventListener('popstate', function () {
+                        var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
+                        if (!stayOnPage) {
+                            history.pushState(null, null, null);
+                        } else {
+                            // history.back() 
+                            location.reload();
+                        }
+                    });
+                });
+            }
+        }
+    },
     //Método para habilitar/deshabilitar botón Siguiente hasta completar todos los campos
     computed: {
         isDisabled: function isDisabled() {
@@ -83396,22 +83414,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
         }
     }
 });
-
-if (window.history && history.pushState) {
-    console.log('Hizo clic en back');
-    addEventListener('load', function () {
-        history.pushState(null, null, null); // creates new history entry with same URL
-        addEventListener('popstate', function () {
-            var stayOnPage = confirm("Usted perderá sus cambios ¿Desea salir de la calculadora?");
-            if (!stayOnPage) {
-                history.pushState(null, null, null);
-            } else {
-                // history.back() 
-                window.location.replace('/');
-            }
-        });
-    });
-}
 
 /***/ }),
 /* 1498 */
