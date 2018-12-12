@@ -141,7 +141,8 @@
                         text: "Si sales perderás tus cambios ¿Deseas regresar?",
                         type: 'warning',
                         showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
+                        confirmButtonColor: '#01546C',
+                        cancelButtonText: 'Cancelar',
                         confirmButtonText: 'Aceptar'
                     }).then((result) => {
                         if (result.value) {
