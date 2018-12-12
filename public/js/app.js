@@ -35938,17 +35938,20 @@ module.exports = __webpack_require__(1514);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_awesome_icons__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_awesome_components_Icon__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_awesome_components_Icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_awesome_components_Icon__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_es6_promise__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_es6_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_es6_promise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_awesome_icons__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vee_validate__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon__);
 __webpack_require__(31);
 __webpack_require__(54);
 // require('es6-promise').polyfill();
 window.Vue = __webpack_require__(22);
-var Promise = __webpack_require__(57).Promise;
+
+__WEBPACK_IMPORTED_MODULE_0_es6_promise___default.a.polyfill();
 // or import all icons if you don't care about bundle size
 
 
@@ -35958,27 +35961,27 @@ var Promise = __webpack_require__(57).Promise;
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('v-icon', __WEBPACK_IMPORTED_MODULE_3_vue_awesome_components_Icon___default.a);
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('padre-component', __webpack_require__(1454));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('dimension-component', __webpack_require__(1457));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('personales-component', __webpack_require__(1496));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('solucion-component', __webpack_require__(1499));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('map-component', __webpack_require__(1502));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('recibo-component', __webpack_require__(1505));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('agendar-component', __webpack_require__(1508));
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('fin-component', __webpack_require__(1511));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('v-icon', __WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon___default.a);
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('padre-component', __webpack_require__(1454));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('dimension-component', __webpack_require__(1457));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('personales-component', __webpack_require__(1496));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('solucion-component', __webpack_require__(1499));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('map-component', __webpack_require__(1502));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('recibo-component', __webpack_require__(1505));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('agendar-component', __webpack_require__(1508));
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('fin-component', __webpack_require__(1511));
 
 // or locally (in your component file)
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    'v-icon': __WEBPACK_IMPORTED_MODULE_3_vue_awesome_components_Icon___default.a,
-    'VeeValidate': __WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]
+    'v-icon': __WEBPACK_IMPORTED_MODULE_4_vue_awesome_components_Icon___default.a,
+    'VeeValidate': __WEBPACK_IMPORTED_MODULE_3_vee_validate__["a" /* default */]
     // 'vueSlider': vueSlider,
     // 'Vmodal': VModal
   }
 });
 
-var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
+var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
   el: '#app'
 });
 
