@@ -77,6 +77,9 @@
             }
         },
         
+        mounted() {
+            final = false;
+        },
         components: {
             VeeValidate
         },

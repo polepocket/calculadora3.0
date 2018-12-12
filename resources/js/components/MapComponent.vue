@@ -60,6 +60,7 @@
     export default {
         props : ['lead'],
         mounted() {
+            final = false;
             this.geolocate()
         },
         name: "GoogleMap",

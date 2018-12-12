@@ -11,6 +11,7 @@
 </template>
     
 <script>
+    var final = undefined;
     export default {
         data() {
             return {

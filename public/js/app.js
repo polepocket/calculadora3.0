@@ -79398,6 +79398,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+var final = undefined;
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
@@ -79733,6 +79734,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vue2_filters___default.a);
         vueSlider: __WEBPACK_IMPORTED_MODULE_1_vue_slider_component___default.a,
         VModal: __WEBPACK_IMPORTED_MODULE_4_vue_js_modal___default.a
     },
+    mounted: function mounted() {
+        final = false;
+    },
+
     plugins: ['~/plugins/vue2-filters'],
     data: function data() {
         return {
@@ -83239,6 +83244,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
     components: {
         VModal: __WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a
     },
+    mounted: function mounted() {
+        final = false;
+    },
     data: function data() {
         return {
             active: false,
@@ -83429,40 +83437,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
         backBrowser1: function backBrowser1() {}
     }
 });
-
-if (window.history && history.pushState && !fin) {
-    addEventListener('load', function (event) {
-        history.pushState(null, null, null); // creates new history entry with same URL
-        event.preventDefault();
-        addEventListener('popstate', function () {
-            if (fin) {
-                location.reload();
-            } else {
-                Swal({
-                    title: 'Aviso',
-                    text: "Si sales perderás tus cambios ¿Deseas regresar?",
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'Aceptar'
-                }).then(function (result) {
-                    if (result.value) {
-                        location.reload();
-                    } else {
-                        history.pushState(null, null, null);
-                    }
-                });
-                // var stayOnPage = confirm("Usted perderá sus cambios ¿Desea regresar?");
-                // if (!stayOnPage) {
-                //     history.pushState(null, null, null);
-                // } else {
-                //     // history.back() 
-                //     location.reload();
-                // }    
-            }
-        });
-    });
-}
 
 /***/ }),
 /* 1498 */
@@ -84029,6 +84003,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default.a);
     mounted: function mounted() {
         var _this = this;
 
+        final = false;
         this.data.consumption = this.consumption;
         this.data.lead_id = this.lead_id;
         this.data.mty = this.mty;
@@ -84590,6 +84565,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['lead'],
     mounted: function mounted() {
+        final = false;
         this.geolocate();
     },
 
@@ -85030,7 +85006,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
             recibo: false
         };
     },
-
+    mounted: function mounted() {
+        final = false;
+    },
 
     components: {
         VeeValidate: __WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]
@@ -85565,7 +85543,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var final = undefined;
 new Vue({
     el: '#menu',
     data: {

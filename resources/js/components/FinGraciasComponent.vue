@@ -25,7 +25,6 @@
 </template>
 
     <script>
-        var final = undefined;
         new Vue({
             el: '#menu',
             data: {
