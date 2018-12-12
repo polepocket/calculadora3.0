@@ -35987,7 +35987,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
     el: '#app'
 });
 
-if (window.history && history.pushState && !fin) {
+if (window.history && history.pushState) {
     addEventListener('load', function (event) {
         history.pushState(null, null, null); // creates new history entry with same URL
         event.preventDefault();
