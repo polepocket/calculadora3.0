@@ -4,12 +4,11 @@ require('./enlight');
 window.Vue = require('vue');
  
 // or import all icons if you don't care about bundle size
-import Es6Promise from 'es6-promise'
-Es6Promise.polyfill()
 import 'vue-awesome/icons'
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
- 
+import Es6Promise from 'es6-promise'
+Es6Promise.polyfill() 
 // Vue.use(VeeValidate);
 /* Register component with one of 2 methods */
 
