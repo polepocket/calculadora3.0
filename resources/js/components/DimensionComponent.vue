@@ -197,7 +197,7 @@
                 else{
                     this.$swal({
                         title: 'Dirección incompleta',
-                        text: "Asegúrate de incluir el número de la casa",
+                        text: "Asegúrate de incluir el número de la casa y código postal",
                         type: 'info',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',

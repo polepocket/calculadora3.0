@@ -139,4 +139,25 @@
             }
         }
     }
+    if (window.history && history.pushState) {
+        addEventListener('load', function() {
+            history.pushState(null, null, null); // creates new history entry with same URL
+            addEventListener('popstate', function() {
+                Swal({
+                    title: 'Aviso',
+                    text: "Si sales perderás tus cambios ¿Deseas regresar?",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    if (result.value) {
+                        location.reload();
+                    }else{
+                        history.pushState(null, null, null);
+                    }
+                }) 
+            });    
+        });
+    }      
 </script>

@@ -290,7 +290,6 @@
                 back1(){
                     this.$emit('back1');
                 },
-                
             }
         }
         
