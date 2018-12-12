@@ -11,6 +11,7 @@
 </template>
     
 <script>
+    var final = false;
     export default {
         data() {
             return {
@@ -42,7 +43,7 @@
                     history.pushState(null, null, null); // creates new history entry with same URL
                     event.preventDefault();
                     addEventListener('popstate', function() {
-                        if(this.fin){
+                        if(final){
                             location.reload();
                         }else{
                             Swal({
@@ -99,6 +100,7 @@
                         if(this.lead.consumption < 2500 || this.lead.cp_perfila == "false")
                         {
                             this.fin = true;
+                            final = true;
                             this.message.title = 'Gracias'
                             this.message.msj = 'Te hemos enviado un correo electrónico con toda la información.'
                         }
@@ -118,6 +120,7 @@
             },
             asesor() {
                 this.fin = true
+                final = true;
                 this.message.title = 'Gracias'
                 this.message.msj = 'En breve te contactará un asesor.'
             },
@@ -137,7 +140,8 @@
                 );
             },
             reciboLead(lead){
-                this.fin = true
+                this.fin = true;
+                final = true;
                 this.message.title = 'Gracias'
                 this.message.msj = 'En breve te contactará un asesor.'
             },
@@ -153,10 +157,11 @@
             },
             enviarCorreo() {
                 this.fin = true
+                final = true
                 this.message.title = 'Gracias'
                 this.message.msj = 'Si no has recibido el correo haz clic aquí para volver a enviarlo.'
             },
         }
     }
-        console.log(this.fin);
+        console.log(final);
 </script>

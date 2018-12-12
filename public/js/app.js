@@ -79364,6 +79364,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+var final = false;
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
@@ -79396,7 +79397,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     history.pushState(null, null, null); // creates new history entry with same URL
                     event.preventDefault();
                     addEventListener('popstate', function () {
-                        if (this.fin) {
+                        if (final) {
                             location.reload();
                         } else {
                             Swal({
@@ -79451,6 +79452,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('leads', this.lead).then(function (response) {
                 if (_this.lead.consumption < 2500 || _this.lead.cp_perfila == "false") {
                     _this.fin = true;
+                    final = true;
                     _this.message.title = 'Gracias';
                     _this.message.msj = 'Te hemos enviado un correo electrónico con toda la información.';
                 }
@@ -79466,6 +79468,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         asesor: function asesor() {
             this.fin = true;
+            final = true;
             this.message.title = 'Gracias';
             this.message.msj = 'En breve te contactará un asesor.';
         },
@@ -79485,6 +79488,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         reciboLead: function reciboLead(lead) {
             this.fin = true;
+            final = true;
             this.message.title = 'Gracias';
             this.message.msj = 'En breve te contactará un asesor.';
         },
@@ -79500,12 +79504,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         enviarCorreo: function enviarCorreo() {
             this.fin = true;
+            final = true;
             this.message.title = 'Gracias';
             this.message.msj = 'Si no has recibido el correo haz clic aquí para volver a enviarlo.';
         }
     }
 });
-console.log(this.fin);
+console.log(final);
 
 /***/ }),
 /* 1456 */
