@@ -1,8 +1,5 @@
 <template>
     <div>
-    <form
-        novalidate="true"
-    >
         <div class="title bg-calcula">
             <div class="col-1">
                 <button class="btn-back" v-on:click="back1()">
@@ -51,8 +48,7 @@
                     </div>     
                 </div>
             </div> 
-        </div>  
-    </form>
+        </div> 
         <modal name="modal-code"
             :adaptive="true"
             :max-width="600"
